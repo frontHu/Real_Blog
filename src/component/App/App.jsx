@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
+@connect(mapStateToProps)
 class App extends Component {
-  
+  componentDidMount() {
+    console.log(this.props, 'props')
+  }
   render() {
     return (
       <div>
@@ -9,6 +13,10 @@ class App extends Component {
       </div>
     )
   }
+}
+
+function mapStateToProps(state) {
+  return state;
 }
 
 export default App;
