@@ -4,6 +4,7 @@ import router from "./router/router";
 import { Router, hashHistory } from "react-router";
 import store from "./redux/until/configStore";
 import { Provider } from 'react-redux';
+import "./index.css";
 
  
 ReactDOM.render(

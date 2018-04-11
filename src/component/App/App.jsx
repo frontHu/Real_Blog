@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./scss/app.scss";
 
 @connect(mapStateToProps)
+
 class App extends Component {
-  componentDidMount() {
-    console.log(this.props, 'props')
-  }
   render() {
     return (
-      <div>
+      <div className="app">
         {this.props.children}
       </div>
     )
