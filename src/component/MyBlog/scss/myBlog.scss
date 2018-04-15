@@ -1,0 +1,12 @@
+.myBlog {
+  overflow: hidden;
+  .myBlog-left {
+    width: 880px;
+    float: left;
+    padding: 20px;
+  }
+  .myBlog-right {
+    width: 280px;
+    float: right;
+  }
+}

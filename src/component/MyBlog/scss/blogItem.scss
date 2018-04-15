@@ -1,0 +1,93 @@
+.blogItemPage {
+  padding: 10px;
+  height: 158px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  &:hover {
+    box-shadow: 2px 5px 14px #c5c5c5;
+    transform: translate3d(0,-2px,0);
+    -webkit-transform: translate3d(0,-3px,0);
+  }
+  .blogItemPage-image {
+    width: 130px;
+    height: 138px;
+    float: left;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+  }
+  .blogItemPage-info {
+    width: 670px;
+    height: 100%;
+    position: relative;
+    // background-color: #ccc;
+    float: right;
+    .blogItemPage-info_title {
+      font-size: 18px;
+      color: #4c4c4c;
+      margin-bottom: 15px;
+    }
+    .blogItemPage-info_desc {
+      p {
+        color: #666;
+        line-height: 1.5em;
+      }
+    }
+    .blogItemPage-info_box {
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      .blogItemPage-info_time {
+        height: 20px;
+        line-height: 20px;
+        padding-left: 20px;
+        background: url("./../images/time.png") no-repeat left center;
+        background-size: 16px;
+        color: #666;
+        float: left;
+        font-size: 14px;
+      }
+      .blogItemPage-info_tag {
+        height: 20px;
+        line-height: 20px;
+        padding-left: 20px;
+        background: url("./../images/tag.png") no-repeat left center;
+        background-size: 16px;
+        color: #666;
+        float: left;
+        margin-left: 14px;
+        font-size: 14px;
+      }
+      .blogItemPage-info_comment {
+        width: 35px;
+        height: 24px;
+        background: url("./../images/comment.png") no-repeat center center;
+        background-size: 14px;
+        color: #666;
+        float: right;
+        border: 1px solid #f1f1f1;
+        border-radius: 2px;
+      }
+      .blogItemPage-info_see {
+        width: 45px;
+        height: 24px;
+        background: url("./../images/see.png") no-repeat 5px center;
+        background-size: 14px;
+        color: #666;
+        float: right;
+        border: 1px solid #f1f1f1;
+        border-radius: 2px;
+        margin-right: 5px;
+        color: #666;
+        text-align: right;
+        font-size: 14px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
