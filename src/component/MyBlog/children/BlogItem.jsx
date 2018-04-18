@@ -9,19 +9,19 @@ class BlogItem extends Component {
   render() {
     return (
       <div className="blogItemPage">
-        <div className="blogItemPage-image">
-          <img src={require("./../images/b.png")} alt="" />
-        </div>
-        <div className="blogItemPage-info">
-          <h1 className="blogItemPage-info_title">REACT生命周期</h1>
-          <div className="blogItemPage-info_desc">
-            <p>这是react生命周期</p>
+        <div className="blogItemPage-main">
+          {
+            this.props.is ?
+            <img className="blogItemPage_img" src={require("./../images/b.png")} alt="" />:null
+          }
+          <div className="blogItemPage-desc">
+            <h1>简单的记录一下</h1>
+            <p>伴随着移动端的发展，触摸交互的手势也越来越丰富，从起初最简单的点击发展到现在的长按、侧滑、拖动等。</p>
           </div>
-          <div className="blogItemPage-info_box">
-            <div className="blogItemPage-info_time">2017-10-20</div>
-            <div className="blogItemPage-info_tag">React</div>
-            <div className="blogItemPage-info_comment"></div>
-            <div className="blogItemPage-info_see">10</div>
+          <div className="blogItemPage-tag">
+            <div className="blogItemPage-tag_comment"></div>
+            <div className="blogItemPage-tag_see"></div>
+            <div className="blogItem-tag_time"> 2019-10-20</div>
           </div>
         </div>
       </div>

@@ -1,93 +1,66 @@
 .blogItemPage {
-  padding: 10px;
-  height: 158px;
-  overflow: hidden;
+  width: 240px;
+  padding: 5px;
   background-color: #fff;
-  transition: all 0.3s ease-in-out;
-  margin-top: 20px;
-  &:hover {
-    box-shadow: 2px 5px 14px #c5c5c5;
-    transform: translate3d(0,-2px,0);
-    -webkit-transform: translate3d(0,-3px,0);
-  }
-  .blogItemPage-image {
-    width: 130px;
-    height: 138px;
-    float: left;
-    img {
+  float: left;
+  .blogItemPage-main {
+    padding: 5px;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #b6b6b6;
+    .blogItemPage_img {
       width: 100%;
-      height: 100%;
-      border-radius: 4px;
+      height: 120px;
     }
-  }
-  .blogItemPage-info {
-    width: 670px;
-    height: 100%;
-    position: relative;
-    // background-color: #ccc;
-    float: right;
-    .blogItemPage-info_title {
-      font-size: 18px;
-      color: #4c4c4c;
-      margin-bottom: 15px;
-    }
-    .blogItemPage-info_desc {
+    .blogItemPage-desc {
+      h1 {
+        padding-top: 20px;
+        text-align: center;
+      }
       p {
-        color: #666;
-        line-height: 1.5em;
+        padding: 5px 10px;
+        line-height: 1.4;
+        font-size: 13px;
+        color: #888;
+        text-indent: 2em;
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
       }
     }
-    .blogItemPage-info_box {
-      width: 100%;
-      overflow: hidden;
-      position: absolute;
-      bottom: 0;
-      .blogItemPage-info_time {
-        height: 20px;
-        line-height: 20px;
-        padding-left: 20px;
-        background: url("./../images/time.png") no-repeat left center;
-        background-size: 16px;
-        color: #666;
-        float: left;
-        font-size: 14px;
-      }
-      .blogItemPage-info_tag {
-        height: 20px;
-        line-height: 20px;
-        padding-left: 20px;
-        background: url("./../images/tag.png") no-repeat left center;
-        background-size: 16px;
-        color: #666;
-        float: left;
-        margin-left: 14px;
-        font-size: 14px;
-      }
-      .blogItemPage-info_comment {
-        width: 35px;
-        height: 24px;
-        background: url("./../images/comment.png") no-repeat center center;
-        background-size: 14px;
-        color: #666;
-        float: right;
-        border: 1px solid #f1f1f1;
-        border-radius: 2px;
-      }
-      .blogItemPage-info_see {
-        width: 45px;
-        height: 24px;
-        background: url("./../images/see.png") no-repeat 5px center;
-        background-size: 14px;
-        color: #666;
-        float: right;
-        border: 1px solid #f1f1f1;
-        border-radius: 2px;
-        margin-right: 5px;
-        color: #666;
-        text-align: right;
-        font-size: 14px;
-        padding-right: 5px;
-      }
+    .blogItemPage-tag {
+     border-top: 1px solid #e8e8e8;
+     background-color: #fbfbfb;
+     padding: 5px 20px;
+     overflow: hidden;
+     .blogItemPage-tag_comment {
+       float: right;
+       background: url("./../images/comment.png") no-repeat center center;
+       background-size: 18px;
+       width: 20px;
+       height: 20px;
+     }
+     .blogItemPage-tag_see {
+      float: right;
+      background: url("./../images/see.png") no-repeat center center;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+     }
+     .blogItem-tag_time {
+       float: left;
+       background: url("./../images/time.png") no-repeat left center;
+       background-size: 18px;
+      //  width: 120px;
+       height: 20px;
+       line-height: 20px;
+       padding-left: 20px;
+       color: #888;
+       font-size: 12px;
+     }
     }
   }
 }
