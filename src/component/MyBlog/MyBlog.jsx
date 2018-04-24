@@ -46,7 +46,7 @@ class MyBlog extends Component {
   //获取最小下标
   getMinIndex(arr, min) {
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] == min) {
+      if (arr[i] === min) {
         return i;
       }
     }

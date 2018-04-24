@@ -15,19 +15,6 @@ class BlogPage extends Component {
   render() {
     return (
       <div className="blogPage">
-        <div className="blogPage-header">
-          <ul className="blogPage-header_list">
-            <li>首页<span></span></li>
-            <li>博客<span></span></li>
-            <li>造飞船<span></span></li>
-            <li>资源<span></span></li>
-            <li>留言<span></span></li>
-            <li>友情链接<span></span></li>
-          </ul>
-          <div className="blogPage-header-avatar">
-            <img src={require("./images/zy.png")} alt="" />
-          </div>
-        </div>
         <div className="blogPage-banner">
           <div className="blogPage-banner-text">
             <p className="blogPage-banner_big">Hey There.</p>
