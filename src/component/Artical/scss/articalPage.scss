@@ -1,0 +1,35 @@
+.articalPage {
+  background-color: #dee3e7;
+  .articalPage-main {
+    padding: 70px 0;
+    .articalPage-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      .articalPage-content-banner {
+        width: 100%;
+        height: 400px;
+        background-color: burlywood;
+        position: relative;
+        .articalPage-content-banner_title {
+          position: absolute;
+          left: 5em;
+          top: 5em;
+          h1 {
+            margin-bottom: 0.5em;
+            color: #fff;
+            font-size: 2em;
+          }
+          h3 {
+            width: 50%;
+            color: #fff;
+            opacity: 0.8;
+          }
+        }
+      }
+      .articalPage-content-text {
+        padding: 5em 8em;
+      }
+    }
+  }
+}

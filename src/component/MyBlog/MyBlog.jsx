@@ -8,12 +8,16 @@ class MyBlog extends Component {
     this.state = {
       num: [1,2,3,4,5,6,6,7,8]
     }
+    this.scrollHandle = this.scrollHandle.bind(this);
   }
 
   componentDidMount() {
-    
-    this.imglocation()
-    window.addEventListener("scroll", () => { this.scrollHandle() }, false);
+    this.imglocation();
+    window.addEventListener("scroll", this.scrollHandle, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollHandle, false);
   }
 
   //imagelocation
@@ -55,12 +59,10 @@ class MyBlog extends Component {
   isLoad() {
     let oContainer = document.querySelector('#container');
     let aBox = oContainer.children;
-    // let lastTop = aBox[aBox.length - 1].offsetTop;
     let lastTop = this.getPageTop(aBox[aBox.length - 1]);
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
     
-    console.log(lastTop < scrollTop + clientHeight)
     if (lastTop < scrollTop + clientHeight) {
       return true;
     } else {
@@ -71,7 +73,7 @@ class MyBlog extends Component {
   //获取元素距离页面顶部距离
   getPageTop(e) {
     let t = e.offsetTop;
-    while (e = e.offsetParent) {
+    while (e === e.offsetParent) {
       t += e.offsetTop;
     }
     return t;

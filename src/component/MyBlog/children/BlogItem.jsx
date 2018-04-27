@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./../scss/blogItem.scss";
 
 class BlogItem extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (

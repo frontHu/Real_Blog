@@ -17,10 +17,12 @@ class BlogPage extends Component {
       <div className="blogPage">
         <div className="blogPage-banner">
           <div className="blogPage-banner-text">
-            <p className="blogPage-banner_big">Hey There.</p>
-            <p className="blogPage-banner_small">base in Hefei.</p>
-            <p className="blogPage-banner_big">Just Another Front-end Engineer.</p>
-            <p className="blogPage-banner_small">But Lazy.</p>
+            <section className="blogPage-banner_big">Hey There.</section>
+            <section className="blogPage-banner_small">based in Hefei, Anhu.</section>
+            <section className="blogPage-banner_big">Just Another FE Engineer.</section>
+            <section className="blogPage-banner_small">Now, Working at Iflytek.</section>
+            <section className="blogPage-banner_big">Want to be a FE architect.</section>
+            <section className="blogPage-banner_small">Always troubled by reality. <span>😝😝😝</span></section>
           </div>
         </div>
         <div className="blogPage-content">

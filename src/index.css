@@ -9,3 +9,18 @@ html,body {
   width: 100%; 
   height: 100%;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+@font-face {
+  font-family: "FedraSans";
+  src: url("./font/FedraSa0.ttf");
+}
+@font-face {
+  font-family: "Apercu";
+  src: url("./font/apercu-light.woff");
+}

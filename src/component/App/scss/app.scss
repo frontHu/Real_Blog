@@ -1,4 +1,43 @@
 .app {
   width: 100%;
   height: 100%;
+  
+  
+ 
+  .transitionWrapper-enter-active {
+    animation: shadeIn 1.5s linear forwards;
+  }
+ 
+  .transitionWrapper-leave-active {
+    animation: shadeOut 1.5s linear forwards;
+  }
+ 
+  .transitionWrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+  }
+
+  @keyframes shadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  @keyframes shadeOut {
+    0% {
+      opacity: 1;
+      // transform: translateX(0px);
+    }
+
+    100% {
+      opacity: 0;
+      // transform: translateX(10px);
+    }
+  }
 }

@@ -1,0 +1,65 @@
+.heroItem {
+  width: 380px;
+  height: 170px;
+  float: left;
+  margin: 0 10px 20px;
+  background-color: #fff;
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+  }
+  .heroItem-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    float: left;
+    margin: 15px 0 0 25px;
+  }
+  .nickname {
+    padding: 15px 10px 15px 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+  .heroItem-desc {
+    height: 4.5em;
+    margin: 0 20px;
+    overflow: hidden;
+    line-height: 1.5em;
+    font-size: 12px;
+    color: #888;
+  }
+  .heroItem-link {
+    padding: 10px 20px;
+    .hero-link_blog, .hero-link_git {
+      display: inline-block;
+      vertical-align: text-top;
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      color: #fff;
+      transition: all .2s ease-out;
+      -moz-transition: all .2s ease-out;
+      -webkit-transition: all .2s ease-out;
+      -o-transition: all .2s ease-out;
+      text-decoration: none;
+      &:hover {
+        background: transparent;
+        box-shadow: 0 0 1px #ccc;
+        color: #333;
+      }
+    }
+    .hero-link_blog {
+      background: green;
+      font-size: 14px;
+    }
+    .hero-link_git {
+      background: #00ae50;
+      font-size: 14px;
+    }
+  }
+}

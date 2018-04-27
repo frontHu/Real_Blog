@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./scss/app.scss";
 import Header from "./../Header/Header";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 
 @connect(mapStateToProps)
 class App extends Component {
@@ -9,15 +11,27 @@ class App extends Component {
   //   super(props)
   // }
 
+
   render() {
-    console.log(this.props.router.location.pathname)
     return (
       <div className="app">
         {
-          this.props.router.location.pathname === "/" ? null :
-          <Header />  
+          this.props.router.location.pathname === "/" ? null : <Header />  
         }
-        {this.props.children}
+          <ReactCSSTransitionGroup
+            transitionName="transitionWrapper"
+            component="div"
+            className="transitionWrapper"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}
+            >
+            <div key={this.props.location.pathname}
+              style={{position:"absolute", width: "100%", height:"100%"}}>
+              {
+                this.props.children
+              }
+            </div>
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
