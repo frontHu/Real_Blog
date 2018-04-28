@@ -3,9 +3,9 @@ import "./scss/hero.scss";
 import HeroItem from "./children/HeroItem";
 
 class Hero extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   render() {
     return (

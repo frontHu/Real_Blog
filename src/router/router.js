@@ -4,7 +4,7 @@ import BlogPage from "components/BlogPage/BlogPage";
 import MyBlog from "components/MyBlog/MyBlog";
 import Artical from "components/Artical/Artical";
 import Hero from "components/Hero/Hero";
-import Comment from "components/Comment/Comment";
+import AboutMe from "components/AboutMe/AboutMe";
 
 const router = [
   {
@@ -26,8 +26,8 @@ const router = [
         components: Hero
       },
       {
-        path: "comment",
-        components: Comment
+        path: "about",
+        components: AboutMe
       }
     ]
   }
