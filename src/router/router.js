@@ -5,6 +5,7 @@ import MyBlog from "components/MyBlog/MyBlog";
 import Artical from "components/Artical/Artical";
 import Hero from "components/Hero/Hero";
 import AboutMe from "components/AboutMe/AboutMe";
+import Comment from "components/Comment/Comment";
 
 const router = [
   {
@@ -28,6 +29,11 @@ const router = [
       {
         path: "about",
         components: AboutMe
+      },
+      //留言
+      {
+        path: "comment",
+        components: Comment
       }
     ]
   }

@@ -1,0 +1,43 @@
+.messagePage {
+  background: white;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  .messagePage-user {
+    overflow: hidden;
+    .messagePage-user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: blue;
+      float: left;
+      margin-right: 10px;
+    }
+    .messagePage-user-info {
+      .messagePage-user-info-name {
+        color: #666;
+        font-size: 14px;
+      }
+      .messagePage-user-info-time {
+        height: 25px;
+        line-height: 25px;
+        color: #999;
+        font-size: 12px;
+      }
+    }
+  }
+  .messagePage-text {
+    max-height: 228px;
+    overflow: auto;
+    padding: 5px 0;
+    line-height: 1.6em;
+    color: #666;
+    font-size: 14px;
+  }
+  .messagePage-action {
+    overflow: hidden;
+    .messagePage-action-replay {
+      float: right;
+    }
+  }
+}

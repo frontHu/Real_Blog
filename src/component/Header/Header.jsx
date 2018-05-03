@@ -51,7 +51,7 @@ class Header extends Component {
               <li><Link to="/">首页</Link><span></span></li>
               <li><Link to="/">博客</Link><span></span></li>
               <li><Link to="/">造飞船</Link><span></span></li>
-              <li><Link to="/">资源</Link><span></span></li>
+              <li><Link to="about">关于我</Link><span></span></li>
               <li><Link to="comment">留言</Link><span></span></li>
               <li><Link to="hero">友情链接</Link><span></span></li>
             </ul>

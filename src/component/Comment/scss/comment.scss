@@ -1,0 +1,91 @@
+.commentPage {
+  width: 100%;
+  min-width: 1200px;
+  .commentPage-banner {
+    width: 100%;
+    min-width: 1200px;
+    height: 500px;
+    background: red;
+    background-size: contain;
+    position: relative;
+    .commentPage-chat {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      .commentPage-chat-box {
+        width: 700px;
+        padding: 20px 20px 20px 20px;
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        .commentPage-chat-avatar {
+          width: 40px;
+          height: 40px;
+          background-color: #ccc;
+          float: left;
+        }
+        .commentPage-chat-input {
+          position: relative;
+          margin-left: 60px;
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            top: 14px;
+            left: -7px;
+            border: 1px solid #ddd;
+            border-width: 0 0 1px 1px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+          textarea {
+            width: 100%;
+            height: 80px;
+            resize: none;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+          }
+        }
+        .commentPage-chat-sub {
+          overflow: hidden;
+          button {
+            height: 30px;
+            background-color: #f90;
+            border: none;
+            color: #fff;
+            padding: 0 20px;
+            float: right;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .commentPage-main {
+    width: 100%;
+    min-width: 1200px;
+    background-color: #f4f4f4;
+    .commentPage-content {
+      width: 1200px;
+      background-color: #fff;
+      overflow: hidden;
+      margin: 0 auto;
+      .commentPage-content-l {
+        width: 800px;
+        float: left;
+      }
+      .commentPage-content-r {
+
+      }
+    }
+  }
+}
