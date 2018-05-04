@@ -1,6 +1,7 @@
 import React , { Component } from "react";
 import "./scss/comment.scss";
 import Message from "./children/Message";
+import Github from "./children/Github";
 
 class Comment extends Component {
   constructor(props) {
@@ -28,9 +29,11 @@ class Comment extends Component {
         <div className="commentPage-main">
           <div className="commentPage-content">
             <div className="commentPage-content-l">
-              <Message />
+              <Message /><Message /><Message />
             </div>
-            <div className="commentPage-content-r"></div>
+            <div className="commentPage-content-r">
+            <Github />
+            </div>
           </div>
         </div>
       </div>
