@@ -94,6 +94,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      'components': path.resolve(__dirname, './../src/component/')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -166,7 +167,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.css$/,
+            test: /\.(css|scss)$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -184,6 +185,13 @@ module.exports = {
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                       },
+                    },
+                    {
+                      loader: require.resolve("sass-loader"),
+                      options: {
+                        include: path.resolve(__dirname, "./../src"),
+                        exclude: path.resolve(__dirname, "./../node_modules")
+                      }
                     },
                     {
                       loader: require.resolve('postcss-loader'),
