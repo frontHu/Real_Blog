@@ -7,11 +7,6 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 @connect(mapStateToProps)
 class App extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
-
-
   render() {
     return (
       <div className="app">
