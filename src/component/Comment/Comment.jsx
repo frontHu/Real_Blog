@@ -15,7 +15,7 @@ class Comment extends Component {
           <div className="commentPage-chat">
             <div className="commentPage-chat-box">
               <div className="commentPage-chat-avatar">
-              
+                <img src={require('./images/avatar.png')} alt=""/>
               </div>
               <div className="commentPage-chat-input">
                 <textarea></textarea>

@@ -27,15 +27,18 @@ class AboutMe extends Component {
               <div className="aboutPage-main-content-me_title">前言</div>
               <div className="aboutPage-main-content-me_desc">
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;一个还在成长的90后小前端，爱好前端，喜欢coding，热爱新的事物，却又是懒惰和轻微强迫症综合体患者。
-                偶尔对未来充满着斗志，有时却被眼前的现实所打击回归自我。考过研，考过公务员，想过回家，想过创业，但没过放弃代码。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;年轻的我们迷茫而又着急，想要拥有自己的陋室，Car，想要旅行，想要高品质生活，这么年轻却觊觎整个世界，那么浮躁却又想
+                偶尔对未来充满着斗志，有时却被眼前的现实所打击回归自我。考过研，考过公务员，想创业。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;年轻的我们迷茫而又着急，想要拥有自己的Home，想要一辆GTR，想要惬意的生活，又忙于在前进的路上奔跑，这么年轻却觊觎整个世界，那么浮躁却又想
                 看透生活，不断催促自己快点成长，却沉不下心认真读一篇文章 ，一次次吹响前进的号角 却又总倒在离出发不远的地方。</p>
               </div>
               <div className="aboutPage-main-content-me_title">工作历程</div>
               <div className="aboutPage-main-content-me_desc">
                 <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;毕业至今(2018)小有3年，当过切图仔，做过测试，也迷茫过，但最后还是选择了前端coding。<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;是因为兴趣和挑战并存吧(虽然妄想尝试其他的职业)。前端发展如此之快，技术不断更新迭代，需要不断学习去填充自己，这样从中可以获得一些小莫名的成就感，激发自己不断学习的动力。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;毕业至今(2018)小有3年。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;网易安徽-申请前端账号。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;时光流影-前端打怪。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;科大讯飞-持续打怪ing。<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;持续的学习才是前端的魅力所在吧。<br/>
                 {/* &nbsp;&nbsp;&nbsp;&nbsp;也许是因为觉得前端是一个让人觉得年轻，有活力，有创新，能够让你不断前进，可以特立独行的一个"职业"吧。<br/> */}
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 </p>

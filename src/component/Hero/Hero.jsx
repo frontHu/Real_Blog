@@ -18,15 +18,6 @@ class Hero extends Component {
         </div>
         <div className="heroPage-main">
           <HeroItem />
-          <HeroItem />
-          <HeroItem />
-          <HeroItem />
-          <HeroItem />
-          <HeroItem />
-
-          <HeroItem />
-          <HeroItem /><HeroItem />
-
         </div>
       </div>
     )
