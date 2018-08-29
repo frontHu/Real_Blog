@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./scss/blogPage.scss";
 
 class BlogPage extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
 
   componentDidMount() {
     window.addEventListener("scroll", () => {

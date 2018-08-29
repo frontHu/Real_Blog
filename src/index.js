@@ -5,6 +5,7 @@ import { Router, hashHistory } from "react-router";
 import store from "./redux/until/configStore";
 import { Provider } from 'react-redux';
 import "./index.css";
+import "./layout.css";
 
  
 ReactDOM.render(

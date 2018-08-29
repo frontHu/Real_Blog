@@ -6,6 +6,7 @@ import Artical from "components/Artical/Artical";
 import Hero from "components/Hero/Hero";
 import AboutMe from "components/AboutMe/AboutMe";
 import Comment from "components/Comment/Comment";
+import Plane from "components/Plane/Plane";
 
 const router = [
   {
@@ -34,6 +35,10 @@ const router = [
       {
         path: "comment",
         components: Comment
+      },
+      {
+        path: "plane",
+        component: Plane
       }
     ]
   }

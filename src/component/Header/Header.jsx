@@ -50,7 +50,7 @@ class Header extends Component {
             <ul className="headerPage-header_list">
               <li><Link to="/">首页</Link><span></span></li>
               <li><Link to="blog">博客</Link><span></span></li>
-              <li><Link to="">造飞船</Link><span></span></li>
+              <li><Link to="plane">造飞船</Link><span></span></li>
               <li><Link to="about">关于我</Link><span></span></li>
               <li><Link to="comment">留言</Link><span></span></li>
               <li><Link to="hero">友情链接</Link><span></span></li>

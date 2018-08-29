@@ -47,21 +47,21 @@ module.exports = {
   module: {
     strictExportPresence: true,
     rules: [
-      {
-        test: /\.(js|jsx|mjs)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
+      // {
+      //   test: /\.(js|jsx|mjs)$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       options: {
+      //         formatter: eslintFormatter,
+      //         eslintPath: require.resolve('eslint'),
               
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: paths.appSrc,
-      },
+      //       },
+      //       loader: require.resolve('eslint-loader'),
+      //     },
+      //   ],
+      //   include: paths.appSrc,
+      // },
       {
         oneOf: [
           {

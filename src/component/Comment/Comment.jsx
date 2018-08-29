@@ -29,7 +29,8 @@ class Comment extends Component {
         <div className="commentPage-main">
           <div className="commentPage-content">
             <div className="commentPage-content-l">
-              <Message /><Message /><Message />
+              <Message />
+              <Message />
             </div>
             <div className="commentPage-content-r">
             <Github />
