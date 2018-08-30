@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./scss/app.scss";
 import Header from "./../Header/Header";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 
 @connect(mapStateToProps)
@@ -13,20 +12,19 @@ class App extends Component {
         {
           this.props.router.location.pathname === "/" ? null : <Header />  
         }
-          <ReactCSSTransitionGroup
+          {/* <ReactCSSTransitionGroup
             transitionName="transitionWrapper"
             component="div"
             className="transitionWrapper"
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
-            >
-            <div key={this.props.location.pathname}
-              style={{position:"absolute", width: "100%", height:"100%"}}>
+            > */}
+            {/* <div key={this.props.location.pathname} style={{position:"absolute", width: "100%", height:"100%"}}> */}
               {
                 this.props.children
               }
-            </div>
-        </ReactCSSTransitionGroup>
+            {/* </div> */}
+        {/* </ReactCSSTransitionGroup> */}
       </div>
     )
   }

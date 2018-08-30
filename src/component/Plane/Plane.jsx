@@ -26,7 +26,14 @@ class Plane extends React.Component {
               title='基于React的可拖动进度条初级组件'
               desc='基于react的进度条组件，可实现拖拽调整进度和支持调整后的事件回调。'
               link='https://www.npmjs.com/package/progressbar-react'
-              img={require('./images/STAR.png')}
+              img={require('./images/npm.png')}
+            />
+            <Planeitem 
+              style={{backgroundSize: 'contain',backgroundColor: '#009A61'}}
+              title='个人segmentFault'
+              desc='偶尔记录一下学习的文章，加强学习记忆和分享。'
+              linl='https://segmentfault.com/u/fsrookie'
+              img={require('./images/segmentfault.jpg')}
             />
           </div>
         </div>

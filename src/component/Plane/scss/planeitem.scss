@@ -35,7 +35,7 @@
       }
     }
     .plane-item-box-cover {
-      background: #333 url('./../images/npm.png') no-repeat center center;
+      // background: #333 url('./../images/npm.png') no-repeat center center;
       transition: all .2s ease-in-out;
       transition-delay: .1s;
       &::after {
@@ -56,7 +56,8 @@
       .plane-item-box-desc-title {
         height: 50px;
         line-height: 50px;
-        text-align: center;
+        // text-align: center;
+        padding: 0 20px;
         font-size: 16px;
         color: #000;
         white-space: nowrap;
