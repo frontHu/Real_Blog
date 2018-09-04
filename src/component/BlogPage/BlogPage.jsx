@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import "./scss/blogPage.scss";
+import React, { Component } from "react"
+import "./scss/blogPage.scss"
+import MyBlog from './../MyBlog/MyBlog'
 
 class BlogPage extends Component {
 
@@ -24,7 +25,7 @@ class BlogPage extends Component {
         </div>
         <div className="blogPage-content">
           <div className="blogPage-block">
-            {this.props.children}
+            <MyBlog />
           </div>
         </div>
       </div>

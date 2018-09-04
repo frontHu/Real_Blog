@@ -16,8 +16,7 @@ const router = [
     childRoutes: [
       {
         path: "blog",
-        components: BlogPage,
-        indexRoute: {component: MyBlog}
+        components: BlogPage
       },
       {
         path: "artical/:articalID",
