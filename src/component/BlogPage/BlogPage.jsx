@@ -5,9 +5,6 @@ import MyBlog from './../MyBlog/MyBlog'
 class BlogPage extends Component {
 
   componentDidMount() {
-    window.addEventListener("scroll", () => {
-      
-    }, false)
   }
 
   render() {
