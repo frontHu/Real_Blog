@@ -1,0 +1,91 @@
+.plane-item {
+  box-sizing: border-box;
+  padding: 0 10px;
+  float: left;
+  .plane-item-box {
+    height: 330px;
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    overflow: hidden;
+    text-decoration: none;
+    .plane-item-box-data {
+      width: 100%;
+      height: 36px;
+      background-color: #222;
+      box-sizing: border-box;
+      padding: 0 20px;
+      line-height: 36px;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: -36px;
+      transition: all .2s ease-in-out;
+      transition-delay: .1s;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+      span {
+        color: #fff;
+        font-size: 12px;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+    }
+    .plane-item-box-cover {
+      // background: #333 url('./../images/npm.png') no-repeat center center;
+      transition: all .2s ease-in-out;
+      transition-delay: .1s;
+      &::after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+    }
+    .plane-item-box-desc {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      margin-top: -50px;
+      background-color: #fff;
+      transition: all .2s ease-in-out;
+      transition-delay: .1s;
+      .plane-item-box-desc-title {
+        height: 50px;
+        line-height: 50px;
+        // text-align: center;
+        padding: 0 20px;
+        font-size: 16px;
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .plane-item-box-desc-main {
+        height: 64px;
+        padding: 0 20px;
+        line-height: 16px;
+        font-size: 12px;
+        color: #888;
+        overflow: hidden;
+      }
+    }
+
+    &:hover {
+      .plane-item-box-data {
+        transform: translateY(36px);
+        z-index: 9;
+      }
+      .plane-item-box-cover {
+        // opacity: .6;
+        transform: translateY(-30px);
+      }
+      .plane-item-box-desc {
+        transform: translateY(-64px);
+      }
+    }
+  }
+}

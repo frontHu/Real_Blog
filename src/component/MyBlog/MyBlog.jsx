@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import BlogItem from "./children/BlogItem"
 import "./scss/myBlog.scss";
+import * as Apis from './../../service/blog.service'
 
-class MyBlog extends Component {
+class MyBlog extends Component { 
   constructor(props) {
     super(props)
     this.state = {
@@ -14,6 +15,7 @@ class MyBlog extends Component {
   componentDidMount() {
     this.imglocation();
     window.addEventListener("scroll", this.scrollHandle, false);
+    Apis.getBlogList()
   }
 
   componentWillUnmount() {

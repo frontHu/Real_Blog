@@ -12,9 +12,9 @@ class Artical extends Component {
 
   componentDidMount() {
     let $content = document.querySelector(".articalPage-content-text");
+    $content.innerHTML = marked('<pre><code>var a = 11</code></pre>');
     let $preCode = document.querySelectorAll("pre code");
     hljs.initHighlightingOnLoad();
-    $content.innerHTML = marked('<pre><code>var a = 11</code></pre>');
     $preCode.forEach((item) => {
       hljs.highlightBlock(item);
     });
