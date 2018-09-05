@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const server = require('http').Server(app)
-const DB_URL = "mongodb://localhost:27017/blog"
+const DB_URL = "mongodb://localhost:27017/test"
 const blogRouter = require('./blog')
 
 app.use(cookieParser())

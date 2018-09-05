@@ -1,12 +1,11 @@
 import App from "./../component/App/App"
-import IndexPage from "components/IndexPage/IndexPage"
-import BlogPage from "components/BlogPage/BlogPage";
-import MyBlog from "components/MyBlog/MyBlog";
-import Artical from "components/Artical/Artical";
-import Hero from "components/Hero/Hero";
-import AboutMe from "components/AboutMe/AboutMe";
-import Comment from "components/Comment/Comment";
-import Plane from "components/Plane/Plane";
+import IndexPage from "./../page/IndexPage/IndexPage"
+import BlogPage from "./../page/BlogPage/BlogPage";
+import Artical from "./../page/Artical/Artical";
+import Hero from "./../page/Hero/Hero";
+import AboutMe from "./../page/AboutMe/AboutMe";
+import Comment from "./../page/Comment/Comment";
+import Plane from "./../page/Plane/Plane";
 
 const router = [
   {
