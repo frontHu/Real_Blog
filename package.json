@@ -114,7 +114,8 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "mockjs": "^1.0.1-beta3",
     "nodemon": "^1.18.4"
   },
-  "proxy": "http://47.98.177.236:3333"
+  "proxy": "http://localhost:3333"
 }

@@ -1,28 +1,35 @@
 const mongoose = require("mongoose")
 
-let models = {
-  list: [new mongoose.Schema({
-    title: {
+let model = {
+  content: {
+    currentPage: {
       type: String,
       require: true
     },
-    desc: {
-      type: String,
-      require: true
-    },
-    createTime: {
-      type: String,
-      require: true
-    },
-    seeNumber: {
-      type: String,
-      require: true
-    }
-  })]
+    list: [new mongoose.Schema({
+      imgUrl: {
+        type: String
+      },
+      title: {
+        type: String,
+        require: true
+      },
+      desc: {
+        type: String,
+        require: true
+      },
+      createTime: {
+        type: String,
+        require: true
+      },
+      seeNumber: {
+        type: String,
+        require: true
+      }
+    })]
+  }
 }
 
-let blogModels = mongoose.model('blog', new mongoose.Schema(models));
-
 module.exports = {
-  blogModels
+  model: mongoose.model('blog', new mongoose.Schema(model))
 }

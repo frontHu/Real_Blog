@@ -1,14 +1,12 @@
 .blogItemPage {
   width: 300px;
   padding: 5px;
-  background-color: #fff;
   float: left;
   box-sizing: border-box;
   .blogItemPage-main {
     padding: 5px;
-    border: 1px solid #b6b6b6;
-    // border-radius: 5px;
-    // box-shadow: 0 0 5px #b6b6b6;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
     .blogItemPage_img {
       width: 100%;
       height: 120px;
@@ -35,7 +33,7 @@
     .blogItemPage-tag {
      border-top: 1px solid #e8e8e8;
      background-color: #fbfbfb;
-     padding: 5px 20px;
+     padding: 5px 10px 0;
      overflow: hidden;
      .blogItemPage-tag_comment {
        float: right;
@@ -64,5 +62,16 @@
        font-size: 12px;
      }
     }
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px)
   }
 }

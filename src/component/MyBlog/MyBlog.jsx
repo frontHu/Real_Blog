@@ -7,15 +7,15 @@ class MyBlog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      num: [1,2,3,4,5,6,6,7,8]
+      currentPage: 1
     }
     this.scrollHandle = this.scrollHandle.bind(this);
   }
 
   componentDidMount() {
+    this.props.actions.blogListAction({ currentPage: this.state.currentPage })
     this.imglocation();
     window.addEventListener("scroll", this.scrollHandle, false);
-    Apis.getBlogList()
   }
 
   componentWillUnmount() {
@@ -27,12 +27,12 @@ class MyBlog extends Component {
     //计算容器宽度以及定位
     let container = document.querySelector("#container");
     let aBox = container.children;
+    if(aBox.length <= 0) return
     let imgWidth = aBox[0].offsetWidth;
     let clientWidth = container.clientWidth;
     let num = Math.floor(clientWidth / imgWidth);
     container.style.width = num * imgWidth + "px";
     container.style.margin = "0 auto";
-
     //计算高度数组以及定位每个元素位置，同时更新高度数组
     let heightArray = [];
     for (let i = 0; i < aBox.length; i++) {
@@ -64,43 +64,43 @@ class MyBlog extends Component {
     let lastTop = this.getPageTop(aBox[aBox.length - 1]);
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    
+    console.log(lastTop, scrollTop, clientHeight)
     if (lastTop < scrollTop + clientHeight) {
       return true;
     } else {
-      return false;
+      return false; 
     }
   }
 
   //获取元素距离页面顶部距离
   getPageTop(e) {
-    let t = e.offsetTop;
-    while (e === e.offsetParent) {
-      t += e.offsetTop;
+    let top = 0
+    while (e.offsetParent) {
+      top += e.offsetTop;
+      e = e.offsetParent
     }
-    return t;
+    return top;
   }
 
   //滚动事件
   scrollHandle() {
     if (this.isLoad()) {
-      let arr = this.state.num
-      arr.push(1,2,3)
       this.setState({
-        num: arr
+        currentPage: this.state.currentPage + 1
       }, () => {
-        this.imglocation()
+        this.props.actions.blogListAction({currentPage:this.state.currentPage})
       })
     }
+    this.imglocation()
   }
 
   render() {
     return (
-      <div className="myBlog">
+      <div className="myBlog" >
         <div className="myBlog-main" id="container">
           {
-            this.state.num.map((item, index) => {
-             return  <BlogItem is={index%2 === 0} key={index}/>
+            this.props.list.length>0 &&  this.props.list.map((v, i) => {
+             return  <BlogItem {...v} key={i} i={i}/>
             })
           }
         </div>
