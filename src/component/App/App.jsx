@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./scss/app.scss";
 import Header from "./../Header/Header";
+import Footer from './../Footer/Footer'
 
 
 @connect(mapStateToProps)
@@ -25,6 +26,7 @@ class App extends Component {
               }
             {/* </div> */}
         {/* </ReactCSSTransitionGroup> */}
+        <Footer></Footer>
       </div>
     )
   }
