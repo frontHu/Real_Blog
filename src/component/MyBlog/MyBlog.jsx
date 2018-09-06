@@ -7,7 +7,8 @@ class MyBlog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // currentPage: 1
+      currentPage: 1,
+      list: []
     }
     this.currentPage = 1;
     this.requesting = false;
@@ -28,10 +29,26 @@ class MyBlog extends Component {
 
   //获取博客列表
   getBlogList() {
-    this.props.actions.blogListAction({currentPage: this.currentPage},()=> {
-      this.requesting = false;
-      let maxH = Math.max.apply(null, this.heightArray);
-      document.querySelector('.myBlog-main').style.height =  maxH + 500+'px'
+    // this.props.actions.blogListAction({currentPage: this.currentPage},()=> {
+    //   this.requesting = false;
+    //   let maxH = Math.max.apply(null, this.heightArray);
+    //   document.querySelector('.myBlog-main').style.height =  maxH + 500 +'px'
+    // })
+    let params = {
+      currentPage: this.state.currentPage
+    }
+    Apis.getBlogList(params).then(res => {
+      if(res.data.code === 200) {
+        this.setState({
+          currentPage: res.data.content.currentPage,
+          list: [...this.state.list, ...res.data.content.list]
+        }, () => {
+          this.imglocation();
+            let maxH = Math.max.apply(null, this.heightArray);
+      document.querySelector('.myBlog-main').style.height =  maxH +'px'
+          this.requesting = false;
+        });
+      }
     })
   }
 
@@ -80,7 +97,6 @@ class MyBlog extends Component {
     let lastTop = this.getPageTop(aBox[aBox.length - 1]);
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    console.log(lastTop, scrollTop, clientHeight)
     if(aBox.length <= 0) {return false}
     if (lastTop < scrollTop + clientHeight) {
       return true;
@@ -94,34 +110,35 @@ class MyBlog extends Component {
     let top = 0
     while (e && e.offsetParent) {
       top += e.offsetTop;
-      e = e.offsetParent
+      e = e.offsetParent;
     }
     return top;
   }
 
   //滚动事件
   scrollHandle() {
-    console.log(this.isLoad(), 'this.isLoad()')
-    if (this.isLoad()) {
-      this.currentPage = this.currentPage + 1;
-      if(!this.requesting) {
-        this.requesting = true;
+    if (this.isLoad() && !this.requesting) {
+      this.requesting = true;
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      }, () => {
         this.getBlogList();
-      }
+      });
     }
-    this.imglocation();
+    // this.imglocation();
   }
 
   render() {
+    let list = this.state.list || []
     return (
       <div className="myBlog" >
         <div className="myBlog-main" id="container" style={{minHeight: 600}}>
           {
-            this.props.list.length>0 &&  this.props.list.map((v, i) => {
+            list.length>0 &&  list.map((v, i) => {
              return  <BlogItem {...v} key={i} i={i}/>
             })
           }
-        </div>
+        </div> 
       </div>
     )
   }
