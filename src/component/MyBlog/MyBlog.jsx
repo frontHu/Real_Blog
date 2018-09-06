@@ -64,7 +64,6 @@ class MyBlog extends Component {
     let lastTop = this.getPageTop(aBox[aBox.length - 1]);
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    console.log(lastTop, scrollTop, clientHeight)
     if (lastTop < scrollTop + clientHeight) {
       return true;
     } else {
