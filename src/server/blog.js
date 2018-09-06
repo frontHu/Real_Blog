@@ -29,7 +29,10 @@ Router.post('/list', function(req, res) {
     if(e) {
       return res.json({code: 000, msg: '后端出错'})
     }else {
-      return res.json({ code: 200, content: blogModel.content })
+      setTimeout(function() {
+        return res.json({ code: 200, content: blogModel.content })
+      }, 1000)
+      
     }
   })
 })

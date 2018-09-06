@@ -13,7 +13,7 @@ class BlogItem extends Component {
             <img className="blogItemPage_img" src={this.props.imgUrl} alt="" />:null
           }
           <div className="blogItemPage-desc">
-            <h1>{this.props.title}</h1>
+            <h1>{this.props.title}{this.props.i}</h1>
             <p>{this.props.desc}</p>
           </div>
           <div className="blogItemPage-tag">
