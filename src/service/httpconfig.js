@@ -8,6 +8,9 @@ axios.interceptors.request.use(function(config) {
 
 //拦截响应
 axios.interceptors.response.use(function(config) {
+  if(config.data.code === 200) {
+    return config.data
+  }
   return config
 })
 

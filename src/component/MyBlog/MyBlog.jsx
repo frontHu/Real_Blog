@@ -37,16 +37,14 @@ class MyBlog extends Component {
     }
     this.setState({show: true})
     Apis.getBlogList(params).then(res => {
-      if(res.data.code === 200) {
         this.setState({
-          currentPage: Number(res.data.content.currentPage),
-          list: [...this.state.list, ...res.data.content.list],
+          currentPage: Number(res.content.currentPage),
+          list: [...this.state.list, ...res.content.list],
           show: false
         }, () => {
           this.imglocation();
           this.requesting = false;
         });
-      }
     })
   }
 
