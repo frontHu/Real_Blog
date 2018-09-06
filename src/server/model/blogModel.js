@@ -18,6 +18,10 @@ let model = {
         type: String,
         require: true
       },
+      content: {
+        type: String,
+        require: true
+      },
       createTime: {
         type: String,
         require: true

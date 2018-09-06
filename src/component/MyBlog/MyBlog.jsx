@@ -1,19 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import BlogItem from "./children/BlogItem"
-import "./scss/myBlog.scss";
+import "./scss/myBlog.scss"
 import * as Apis from './../../service/blog.service'
+import Loading from './../../component/Loading/Loading'
 
 class MyBlog extends Component { 
   constructor(props) {
     super(props)
     this.state = {
       currentPage: 1,
-      list: []
+      list: [],
+      show: false
     }
     this.currentPage = 1;
     this.requesting = false;
     this.heightArray = [];
     this.itemWidth = 300;
+    this.show = false;
     this.scrollHandle = this.scrollHandle.bind(this);
   }
 
@@ -29,37 +32,28 @@ class MyBlog extends Component {
 
   //获取博客列表
   getBlogList() {
-    // this.props.actions.blogListAction({currentPage: this.currentPage},()=> {
-    //   this.requesting = false;
-    //   let maxH = Math.max.apply(null, this.heightArray);
-    //   document.querySelector('.myBlog-main').style.height =  maxH + 500 +'px'
-    // })
     let params = {
       currentPage: this.state.currentPage
     }
+    this.setState({show: true})
     Apis.getBlogList(params).then(res => {
       if(res.data.code === 200) {
         this.setState({
-          currentPage: res.data.content.currentPage,
-          list: [...this.state.list, ...res.data.content.list]
+          currentPage: Number(res.data.content.currentPage),
+          list: [...this.state.list, ...res.data.content.list],
+          show: false
         }, () => {
           this.imglocation();
-            let maxH = Math.max.apply(null, this.heightArray);
-      document.querySelector('.myBlog-main').style.height =  maxH +'px'
           this.requesting = false;
         });
       }
     })
   }
 
-  //imagelocation
+  //计算容器宽度以及定位
   imglocation() {
-    //计算容器宽度以及定位
     let container = document.querySelector("#container");
     let aBox = container.children;
-    // if(aBox.length <= 0) return
-    // let imgWidth = aBox[0].offsetWidth;
-    let imgWidth = 300;
     let clientWidth = container.clientWidth;
     let num = Math.floor(clientWidth / this.itemWidth);
     container.style.width = num * this.itemWidth + "px";
@@ -74,12 +68,12 @@ class MyBlog extends Component {
         aBox[i].style.position = "absolute";
         aBox[i].style.top = minHeight + "px";
         let minIndex = this.getMinIndex(this.heightArray, minHeight);
-        // aBox[i].style.left = minIndex * aBox[0].offsetWidth + "px";
         aBox[i].style.left = minIndex * this.itemWidth + "px";
-        // console.log(heightArray, minIndex * this.itemWidth, 'minIndex')
         this.heightArray[minIndex] = this.heightArray[minIndex] + aBox[i].offsetHeight;
       }
     }
+    let maxH = Math.max.apply(null, this.heightArray);
+    document.querySelector('.myBlog-main').style.height =  maxH +'px'
   }
 
   //获取最小下标
@@ -125,7 +119,6 @@ class MyBlog extends Component {
         this.getBlogList();
       });
     }
-    // this.imglocation();
   }
 
   render() {
@@ -135,10 +128,11 @@ class MyBlog extends Component {
         <div className="myBlog-main" id="container" style={{minHeight: 600}}>
           {
             list.length>0 &&  list.map((v, i) => {
-             return  <BlogItem {...v} key={i} i={i}/>
+             return   <BlogItem {...v} key={i}/>
             })
           }
-        </div> 
+        </div>
+        <Loading  show={this.state.show}/>
       </div>
     )
   }

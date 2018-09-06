@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import "./../scss/blogItem.scss";
 import { format } from './../../../untils/format'
+import {hashHistory} from "react-router"
 
 class BlogItem extends Component {
 
+  goArticle() {
+    hashHistory.push('/artical/123')
+  }
+
   render() {
     return (
-      <div className="blogItemPage">
+      <div className="blogItemPage" onClick={this.goArticle.bind(this, this.props._id)}>
         <div className="blogItemPage-main">
           {
             this.props.imgUrl ?
-            <img className="blogItemPage_img" src={this.props.imgUrl} alt="" />:null
+              <img className="blogItemPage_img" src={this.props.imgUrl} alt="" /> : null
           }
           <div className="blogItemPage-desc">
             <h1>{this.props.title}{this.props.i}</h1>

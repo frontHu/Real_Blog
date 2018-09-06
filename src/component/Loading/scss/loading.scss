@@ -1,0 +1,33 @@
+.loading {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+  .loading-circle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loadingRound 2s ease-in-out infinite forwards;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      top: -4px;
+      left: 50%;
+      margin-left: -4px;
+      background: #555;
+      border-radius: 100%;
+    }
+  }
+  @keyframes loadingRound {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+}

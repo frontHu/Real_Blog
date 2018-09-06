@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "./scss/blogPage.scss"
 import MyBlog from './../../component/MyBlog/MyBlog'
+import Loading from './../../component/Loading/Loading'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as blogActions from './../../redux/action/blog.action'
@@ -46,7 +47,6 @@ class BlogPage extends Component {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     )
