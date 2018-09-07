@@ -2,7 +2,11 @@ const mongoose = require("mongoose")
 
 let model = {
   currentPage: {
-    type: String,
+    type: Number,
+    require: true
+  },
+  totalCount: {
+    type: Number,
     require: true
   },
   list: [new mongoose.Schema({

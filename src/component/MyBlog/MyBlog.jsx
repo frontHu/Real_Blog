@@ -4,19 +4,19 @@ import "./scss/myBlog.scss"
 import * as Apis from './../../service/blog.service'
 import Loading from './../../component/Loading/Loading'
 
-class MyBlog extends Component { 
+class MyBlog extends Component {
   constructor(props) {
     super(props)
     this.state = {
       currentPage: 1,
       list: [],
-      show: false
+      show: false,
     }
     this.currentPage = 1;
     this.requesting = false;
     this.heightArray = [];
     this.itemWidth = 300;
-    this.show = false;
+    this.stop = false
     this.scrollHandle = this.scrollHandle.bind(this);
   }
 
@@ -35,16 +35,20 @@ class MyBlog extends Component {
     let params = {
       currentPage: this.state.currentPage
     }
-    this.setState({show: true})
+    this.setState({ show: true })
+    if(this.stop) return;
     Apis.getBlogList(params).then(res => {
-        this.setState({
-          currentPage: Number(res.content.currentPage),
-          list: [...this.state.list, ...res.content.list],
-          show: false
-        }, () => {
-          this.imglocation();
-          this.requesting = false;
-        });
+      this.setState({
+        currentPage: Number(res.content.currentPage),
+        list: [...this.state.list, ...res.content.list],
+        show: false
+      }, () => {
+        this.imglocation();
+        if(res.content.totalCount === this.state.list.length) {
+          this.stop = true;
+        }
+        this.requesting = false;
+      });
     })
   }
 
@@ -71,7 +75,7 @@ class MyBlog extends Component {
       }
     }
     let maxH = Math.max.apply(null, this.heightArray);
-    document.querySelector('.myBlog-main').style.height =  maxH +'px'
+    document.querySelector('.myBlog-main').style.height = maxH + 'px'
   }
 
   //获取最小下标
@@ -82,6 +86,7 @@ class MyBlog extends Component {
       }
     }
   }
+
   //判断是否滚动到底部加载数据
   isLoad() {
     let oContainer = document.querySelector('#container');
@@ -89,11 +94,11 @@ class MyBlog extends Component {
     let lastTop = this.getPageTop(aBox[aBox.length - 1]);
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    if(aBox.length <= 0) {return false}
+    if (aBox.length <= 0) { return false }
     if (lastTop < scrollTop + clientHeight) {
       return true;
     } else {
-      return false; 
+      return false;
     }
   }
 
@@ -107,9 +112,15 @@ class MyBlog extends Component {
     return top;
   }
 
+  //获取图片高度
+  getImageHeight(element) {
+    let src = element.getElementsByTagName('img')[0].src
+    // let 
+  }
+
   //滚动事件
   scrollHandle() {
-    if (this.isLoad() && !this.requesting) {
+    if (this.isLoad() && !this.requesting && !this.stop) {
       this.requesting = true;
       this.setState({
         currentPage: this.state.currentPage + 1
@@ -121,16 +132,17 @@ class MyBlog extends Component {
 
   render() {
     let list = this.state.list || []
+    console.log(this.state.show, 'show')
     return (
       <div className="myBlog" >
-        <div className="myBlog-main" id="container" style={{minHeight: 600}}>
+        <div className="myBlog-main" id="container" style={{ minHeight: 400 }}>
           {
-            list.length>0 &&  list.map((v, i) => {
-             return   <BlogItem {...v} key={i}/>
+            list.length > 0 && list.map((v, i) => {
+              return <BlogItem {...v} key={i} i={i} /> 
             })
           }
         </div>
-        <Loading  show={this.state.show}/>
+        { this.state.show ? <Loading/> : null }
       </div>
     )
   }

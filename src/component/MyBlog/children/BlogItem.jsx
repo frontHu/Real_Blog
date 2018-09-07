@@ -4,6 +4,12 @@ import { format } from './../../../untils/format'
 import {hashHistory} from "react-router"
 
 class BlogItem extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+  }
 
   goArticle() {
     hashHistory.push('/artical/123')
@@ -13,12 +19,11 @@ class BlogItem extends Component {
     return (
       <div className="blogItemPage" onClick={this.goArticle.bind(this, this.props._id)}>
         <div className="blogItemPage-main">
-          {
-            this.props.imgUrl ?
-              <img className="blogItemPage_img" src={this.props.imgUrl} alt="" /> : null
-          }
+          <div className="blogItemPage_img_box">
+            <img  className="blogItemPage_img" src={this.props.imgUrl || require(`./../../../assets/${this.props.i+1}.jpg`)} alt="" /> 
+          </div>
           <div className="blogItemPage-desc">
-            <h1>{this.props.title}{this.props.i}</h1>
+            <h1>{this.props.title}</h1> 
             <p>{this.props.desc}</p>
           </div>
           <div className="blogItemPage-tag">

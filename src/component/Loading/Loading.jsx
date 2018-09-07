@@ -8,7 +8,7 @@ class Loading extends React.Component {
 
   render() {
     let { w, h, show } = this.props
-    return show ? (
+    return (
       <div className="loading"
         style={{
           width: w ? w : '100%',
@@ -18,7 +18,7 @@ class Loading extends React.Component {
       >
         <div className="loading-circle"></div>
       </div>
-    ) : null
+    )
   }
 }
 

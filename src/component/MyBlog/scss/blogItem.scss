@@ -14,9 +14,14 @@
     padding: 5px;
     background-color: #fff;
     border: 1px solid #e8e8e8;
-    .blogItemPage_img {
-      width: 100%;
-      height: 120px;
+    .blogItemPage_img_box {
+      max-height: 400px;
+      .blogItemPage_img {
+        width: 100%;
+        height: 100%;
+        height: 200px;
+        // max-height: 400px; 
+      }
     }
     .blogItemPage-desc {
       h1 {

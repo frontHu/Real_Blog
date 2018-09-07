@@ -18,7 +18,7 @@ class Comment extends Component {
                 <img src={require('./images/avatar.png')} alt=""/>
               </div>
               <div className="commentPage-chat-input">
-                <textarea></textarea>
+                <textarea placeholder='留言功能还木有完成，骚等'></textarea>
               </div>
               <div className="commentPage-chat-sub">
                 <button>发布</button>
