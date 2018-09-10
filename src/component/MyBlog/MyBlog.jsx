@@ -132,7 +132,6 @@ class MyBlog extends Component {
 
   render() {
     let list = this.state.list || []
-    console.log(this.state.show, 'show')
     return (
       <div className="myBlog" >
         <div className="myBlog-main" id="container" style={{ minHeight: 400 }}>
