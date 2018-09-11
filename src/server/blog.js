@@ -25,8 +25,8 @@ Router.post('/list', function (req, res) {
       setTimeout(function () {
         let data = {
           currentPage: currentPage,
-          list: doc[0].list.slice((currentPage-1)*10, currentPage*10),
-          totalCount: doc[0].list.length
+          list: doc[0] ? doc[0].list.slice((currentPage-1)*10, currentPage*10) : [],
+          totalCount: doc[0] ? doc[0].list.length : 0
         }
         return res.json({code: 200, content: data})
       }, 1000)
@@ -63,6 +63,31 @@ Router.post('/save', function (req, res) {
           return res.json({code: 200,  msg: '保存成功' })
         }
       })
+    }
+  })
+})
+
+Router.get('/detail', function(req, res) {
+  // console.log(req.query.id, 'req')
+  let blogId = req.query.id
+  // console.log(blogId, 'blogId')
+  blog.find(function(err, doc) {
+    if(err) {
+      return res.json({code: 000,  msg: '后端出错' })
+    }else {
+      // console.log(doc[0].list, 'doc')
+      let list = doc[0].list
+      // console.log(list, 'list')
+      let v = {}
+      for(let i=0; i<list.length; i++) {
+        console.log(list[i]._id == blogId)
+        if(list[i]._id == blogId) {
+          v = list[i]
+          console.log(list[i])
+          break;
+        }
+      }
+      return res.json({code: 200,  content: v })
     }
   })
 })

@@ -11,8 +11,8 @@ class BlogItem extends Component {
   componentDidMount() {
   }
 
-  goArticle() {
-    hashHistory.push('/artical/123')
+  goArticle(id) {
+    hashHistory.push(`/artical/${id}`)
   }
 
   render() {
