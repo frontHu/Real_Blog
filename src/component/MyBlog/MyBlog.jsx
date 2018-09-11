@@ -10,6 +10,7 @@ class MyBlog extends Component {
     this.state = {
       currentPage: 1,
       list: [],
+      arr: [],
       show: false,
     }
     this.currentPage = 1;
@@ -112,12 +113,6 @@ class MyBlog extends Component {
     return top;
   }
 
-  //获取图片高度
-  getImageHeight(element) {
-    let src = element.getElementsByTagName('img')[0].src
-    // let 
-  }
-
   //滚动事件
   scrollHandle() {
     if (this.isLoad() && !this.requesting && !this.stop) {
@@ -132,7 +127,6 @@ class MyBlog extends Component {
 
   render() {
     let list = this.state.list || []
-    console.log(this.state.show, 'show')
     return (
       <div className="myBlog" >
         <div className="myBlog-main" id="container" style={{ minHeight: 400 }}>

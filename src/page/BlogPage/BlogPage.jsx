@@ -40,7 +40,7 @@ class BlogPage extends Component {
             </div>
             <div className="blogPage-content">
               <div className="blogPage-block">
-                <MyBlog
+                <MyBlog 
                   actions={this.actions}
                   list={this.props.blogReducer.list}
                 />
