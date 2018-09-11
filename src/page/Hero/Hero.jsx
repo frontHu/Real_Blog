@@ -9,7 +9,7 @@ class Hero extends Component {
 
   render() {
     return (
-      <div className="heroPage">
+      <div className="heroPage moveIn">
         <div className="heroPage-banner">
           <div className="heroPage-title">
             {/* <Link href="" className="heroPage-back">回到首页</Link> */}

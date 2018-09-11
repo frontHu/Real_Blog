@@ -10,7 +10,7 @@ class Comment extends Component {
 
   render() {
     return (
-      <div className="commentPage">
+      <div className="commentPage moveIn">
         <div className="commentPage-banner">
           <div className="commentPage-chat">
             <div className="commentPage-chat-box">

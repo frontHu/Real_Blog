@@ -3,7 +3,53 @@
     width: 1200px;
     margin: 0 auto;
   }
+
+  .headerPage {
+    display: block;
+  }
 }
-.grid-box {
-  width: 300px;
+
+@media screen and (max-width: 1250px) {
+  .grid-row {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .headerPage {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .grid-row {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .headerPage {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid-row {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .headerPage {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid-box {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .grid-box {
+    width: 300px;
+  }
 }

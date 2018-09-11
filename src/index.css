@@ -11,9 +11,8 @@ body {
 #root {
   /* width: 100%;
   height: 100%; */
-  min-width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   /* overflow: auto; */
 }
 
@@ -34,6 +33,35 @@ li {
 @font-face {
   font-family: "Apercu";
   src: url("./font/apercu-light.woff");
+}
+
+.moveIn {
+  animation: fadeInRight 1s;
+  -webkit-animation: fadeInRight 1s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/

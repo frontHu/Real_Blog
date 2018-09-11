@@ -4,13 +4,13 @@ import "./scss/about.scss";
 class AboutMe extends Component {
   render() {
     return (
-      <div className="aboutPage">
+      <div className="aboutPage moveIn">
         <div className="aboutPage-banner-fixed"></div>
         <div className="aboutPage-main">
           <div className="aboutPage-main-header">
             <div className="aboutPage-main-header_content">
               <div className="aboutPage-main-header_content_avatar">
-                <img src={require("./images/zy.png")} alt=""/>
+                <img src={require("./images/zy.png")} alt=""/> 
               </div>
               <p className="aboutPage-main-header_content_desc">韶华易逝，红颜易老。</p>
               <p className="aboutPage-main-header_content_desc">Want to open a coffee shop.</p>

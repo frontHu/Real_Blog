@@ -68,22 +68,17 @@ Router.post('/save', function (req, res) {
 })
 
 Router.get('/detail', function(req, res) {
-  // console.log(req.query.id, 'req')
   let blogId = req.query.id
-  // console.log(blogId, 'blogId')
   blog.find(function(err, doc) {
     if(err) {
       return res.json({code: 000,  msg: '后端出错' })
     }else {
-      // console.log(doc[0].list, 'doc')
       let list = doc[0].list
-      // console.log(list, 'list')
       let v = {}
       for(let i=0; i<list.length; i++) {
         console.log(list[i]._id == blogId)
         if(list[i]._id == blogId) {
           v = list[i]
-          console.log(list[i])
           break;
         }
       }

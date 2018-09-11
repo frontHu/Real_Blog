@@ -25,11 +25,11 @@ class BlogPage extends Component {
 
   render() {
     return (
-      <div className="blogPage">
+      <div className="blogPage moveIn">
         <div className="blogPage-main">
           <div className="blogPage-main-content">
             <div className="blogPage-banner">
-              <div className="blogPage-banner-text">
+              <div className="blogPage-banner-text grid-row">
                 <section className="blogPage-banner_big">Hey There.</section>
                 <section className="blogPage-banner_small">based in Hefei, Anhu.</section>
                 <section className="blogPage-banner_big">Just Another FE Engineer.</section>
@@ -39,7 +39,7 @@ class BlogPage extends Component {
               </div>
             </div>
             <div className="blogPage-content">
-              <div className="blogPage-block">
+              <div className="blogPage-block  grid-row">
                 <MyBlog 
                   actions={this.actions}
                   list={this.props.blogReducer.list}

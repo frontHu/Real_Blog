@@ -5,7 +5,7 @@ import { Link } from "react-router";
 class IndexPage extends Component {
   render() {
     return (
-      <div className="indexPage">
+      <div className="indexPage moveIn">
         <div className="indexPage_cover"></div>
         <div className="indexPage_title">
           <p className="indexPage_title_cn">我来这里是为了逃避现实，但我发现了远比自己更重要的东西，我交到了许多朋友，我找到了真爱</p>

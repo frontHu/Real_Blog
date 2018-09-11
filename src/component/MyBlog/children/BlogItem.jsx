@@ -17,7 +17,10 @@ class BlogItem extends Component {
 
   render() {
     return (
-      <div className="blogItemPage" onClick={this.goArticle.bind(this, this.props._id)}>
+      <div style={{
+        left: this.props.left || 0,
+        top: this.props.top || 0
+      }} className="blogItemPage grid-box" onClick={this.goArticle.bind(this, this.props._id)}>
         <div className="blogItemPage-main">
           <div className="blogItemPage_img_box">
             <img  className="blogItemPage_img" src={this.props.imgUrl || require(`./../../../assets/${this.props.i+1}.jpg`)} alt="" /> 

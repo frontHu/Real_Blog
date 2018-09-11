@@ -48,7 +48,7 @@ class Artical extends Component {
 
   render() {
     return (
-      <div className="articalPage">
+      <div className="articalPage moveIn">
         <div className="articalPage-main">
           <div className="articalPage-content">
             <div className="articalPage-content-banner"

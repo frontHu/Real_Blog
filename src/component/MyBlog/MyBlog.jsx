@@ -3,6 +3,9 @@ import BlogItem from "./children/BlogItem"
 import "./scss/myBlog.scss"
 import * as Apis from './../../service/blog.service'
 import Loading from './../../component/Loading/Loading'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as blogActions from './../../redux/action/blog.action'
 
 class MyBlog extends Component {
   constructor(props) {
@@ -13,11 +16,13 @@ class MyBlog extends Component {
       arr: [],
       show: false,
     }
+    this.actions = bindActionCreators(Object({}, blogActions) , this.props.dispatch)
     this.currentPage = 1;
     this.requesting = false;
     this.heightArray = [];
     this.itemWidth = 300;
     this.stop = false
+    this.scrollHandle = this.scrollHandle.bind(this);
     this.scrollHandle = this.scrollHandle.bind(this);
   }
 
@@ -25,6 +30,7 @@ class MyBlog extends Component {
     this.getBlogList();
     this.imglocation();
     window.addEventListener("scroll", this.scrollHandle, false);
+    window.addEventListener("resize", ()=>{this.imglocation()}, false)
   }
 
   componentWillUnmount() {
@@ -55,24 +61,37 @@ class MyBlog extends Component {
 
   //计算容器宽度以及定位
   imglocation() {
+    let box = document.querySelector(".myBlog")
     let container = document.querySelector("#container");
     let aBox = container.children;
-    let clientWidth = container.clientWidth;
-    let num = Math.floor(clientWidth / this.itemWidth);
-    container.style.width = num * this.itemWidth + "px";
+    let clientWidth = box.clientWidth;
+    let itemWidth = document.querySelector('.blogItemPage') && 
+    document.querySelector('.blogItemPage').clientWidth
+    let num = Math.floor(clientWidth / itemWidth);
+    console.log(num, 'num')
+    container.style.width = num * itemWidth + "px";
     container.style.margin = "0 auto";
     //计算高度数组以及定位每个元素位置，同时更新高度数组
     this.heightArray = [];
     for (let i = 0; i < aBox.length; i++) {
       if (i < num) {
         this.heightArray.push(aBox[i].offsetHeight)
+        let list = this.state.list
+        aBox[i].style.position = "static"
+        list[i].left = 0
+        list[i].top = 0
+        this.setState({list});
       } else {
         let minHeight = Math.min.apply(null, this.heightArray);
         aBox[i].style.position = "absolute";
-        aBox[i].style.top = minHeight + "px";
+        // aBox[i].style.top = minHeight + "px";
         let minIndex = this.getMinIndex(this.heightArray, minHeight);
-        aBox[i].style.left = minIndex * this.itemWidth + "px";
+        // aBox[i].style.left = minIndex * this.itemWidth + "px";
         this.heightArray[minIndex] = this.heightArray[minIndex] + aBox[i].offsetHeight;
+        let list = this.state.list;
+        list[i].left = minIndex * this.itemWidth
+        list[i].top = minHeight
+        this.setState({list});
       }
     }
     let maxH = Math.max.apply(null, this.heightArray);
@@ -127,8 +146,9 @@ class MyBlog extends Component {
 
   render() {
     let list = this.state.list || []
+    console.log(list, 'lsit')
     return (
-      <div className="myBlog" >
+      <div className="myBlog grid-row" >
         <div className="myBlog-main" id="container" style={{ minHeight: 400 }}>
           {
             list.length > 0 && list.map((v, i) => {

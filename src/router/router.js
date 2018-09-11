@@ -1,4 +1,4 @@
-import App from "./../component/App/App"
+import App from "./../page/App/App"
 import IndexPage from "./../page/IndexPage/IndexPage"
 import BlogPage from "./../page/BlogPage/BlogPage";
 import Artical from "./../page/Artical/Artical";
