@@ -9,7 +9,7 @@ class Planeitem extends React.Component {
 
   render() {
     return (
-      <div className="plane-item">
+      <div className="plane-item grid-box">
         <a className='plane-item-box' href={this.props.link} target='_blank'>
           <div className="plane-item-box-data">
             <img src={require('./../images/STAR.png')} alt=""/>
