@@ -33,6 +33,13 @@
       bottom: 0;
       z-index: 1;
       background-color: rgba(255, 255, 255, 0.5);
+      visibility: hidden;
+      // display: none;
+      // opacity: 0;
+      // height: 0;
+      transition: all 0.5s;
+      // display: none;
+      // animation: sliderDown 0.5s linear;
 
       .nav-mask-list {
         background-color: #fff;
@@ -49,6 +56,9 @@
           font-size: 14px;
           transition: all .2s linear;
           text-decoration: none;
+          &:hover {
+            color: #ff9800;
+          }
         }
       }
     }
@@ -63,7 +73,7 @@
     right: 0;
     z-index: 9;
     transition: all 0.3s;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 0 5px rgba(0, 0, 0, .4);
 
     .headerPage-header {
@@ -75,7 +85,7 @@
           line-height: 60px;
           float: left;
           color: #fff;
-          margin-right: 30px;
+          margin-right: 10px;
           padding: 0 20px;
           position: relative;
           cursor: default;
@@ -156,13 +166,13 @@
 
   @keyframes sliderDown {
     0% {
-      height: 0;
+      // height: 0;
       opacity: 0;
     }
 
     100% {
-      height: auto;
-      opacity: 0;
+      // height: auto;
+      opacity: 1;
     }
   }
 }

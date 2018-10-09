@@ -1,11 +1,12 @@
 @media screen and (max-width: 1550px) {
   .grid-row {
     width: 1200px;
-    margin: 0 auto;
   }
-
   .headerPage {
     display: block;
+  }
+  .nav-mask {
+    display: none !important;
   }
 }
 
@@ -14,9 +15,11 @@
     width: 900px;
     margin: 0 auto;
   }
-
   .headerPage {
     display: block;
+  }
+  .nav-mask {
+    display: none !important;
   }
 }
 
@@ -25,26 +28,23 @@
     width: 600px;
     margin: 0 auto;
   }
-
   .headerPage {
     display: block;
+  }
+  .nav-mask {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 650px) {
   .grid-row {
     width: 100%;
-    margin: 0 auto;
   }
-
   .headerPage {
-    display: none;
+    /* display: none; */
   }
-}
-
-@media screen and (max-width: 650px) {
-  .grid-box {
-    width: 100%;
+  .nav-mask {
+    display: block !important;
   }
 }
 
