@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./scss/header.scss";
 import { Link } from "react-router";
 import { Icon } from 'antd';
+import $ from 'jquery'
 
 class Header extends Component { 
   constructor(props) {
@@ -9,6 +10,7 @@ class Header extends Component {
     this.state = {
       nav: false
     }
+    this.navShow = false
   }
   componentDidMount() {
     let header = document.querySelector(".headerPage");
@@ -20,6 +22,11 @@ class Header extends Component {
     header.addEventListener("mouseenter", this.mouseEnter.bind(this), false);
     $headerNav.addEventListener("mouseleave", this.mouseOut.bind(this), false);
     header.addEventListener("mouseleave", this.mouseOut.bind(this), false);
+
+    $('.nav-mask').click(()=> {
+      $('.nav-mask').removeClass("nav-mask-show")
+      this.navShow = false
+    })
   }
 
   componentWillUnmount() {

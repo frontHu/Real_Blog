@@ -12,7 +12,7 @@ class App extends Component {
         }
         {this.props.children}
         {
-          this.props.router.location.pathname === "/about" ? null : <Footer />
+          this.props.router.location.pathname === "/about" || this.props.router.location.pathname === "/" ? null : <Footer />
         }
       </div>
     )

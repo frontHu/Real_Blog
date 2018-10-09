@@ -56,12 +56,12 @@ class Artical extends Component {
                 // background: `url(./../../../assets/1.jpg) no-repeat center center / cover`
               }}
             >
-              <div className="articalPage-content-banner_title">
+              <div className="articalPage-content-banner_title grid-row">
                 <h1>{this.state.title}</h1>
                 <h3>{this.state.desc}</h3>
               </div>
             </div> 
-            <div className="articalPage-content-text" dangerouslySetInnerHTML={{__html: this.state.content}}>
+            <div className="articalPage-content-text grid-row" dangerouslySetInnerHTML={{__html: this.state.content}}>
             {/* <MarkdownComponent source={this.state.content} /> */}
             </div>
           </div>

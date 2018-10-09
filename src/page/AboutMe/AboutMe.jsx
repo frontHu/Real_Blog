@@ -8,7 +8,7 @@ class AboutMe extends Component {
         <div className="aboutPage-banner-fixed"></div>
         <div className="aboutPage-main">
           <div className="aboutPage-main-header">
-            <div className="aboutPage-main-header_content">
+            <div className="aboutPage-main-header_content grid-row">
               <div className="aboutPage-main-header_content_avatar">
                 <img src={require("./images/zy.png")} alt=""/> 
               </div>
