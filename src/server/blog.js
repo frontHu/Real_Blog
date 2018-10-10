@@ -1,18 +1,7 @@
-const express = require("express")
-const Router = express.Router()
-const Mock = require('mockjs')
-const blog = require("./model/blogModel").model
-let arr = []
-for (let i = 0; i < 10; i++) {
-  arr.push(Mock.mock({
-    'imgUrl': '',
-    'title|1-10': '小猪',
-    'desc|1-50': '小猪佩奇',
-    'createTime|1-100000': 10000,
-    'seeNumber|1-100': 10
-  }))
+const express = require("express");
+const Router = express.Router();
+const blog = require("./model/blogModel").model;
 
-}
 Router.post('/list', function (req, res) {
   let { currentPage } = req.body
   if (!currentPage) {
