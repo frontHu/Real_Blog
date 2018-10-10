@@ -34,11 +34,12 @@ Router.post('/save', function (req, res) {
     seeNumber: 0
   };
   blog.find(function (err, doc) {
-    if (doc.length <= 0) {
+    if (!doc || doc.length <= 0) {
       let blogModel = new blog({currentPage: 1, list: newData});
       blogModel.save(function (err, doc) {
         if (err) {
-          return res.json({ code: 000, msg: '后端出错' });
+          console.log(err, 'errrrrrrrrrrrrrrrrrrrrr1')
+          return res.json({ code: 000, msg: '后端出错1' });
         } else {
           return res.json({ code: 200, msg: '保存成功' });
         }
@@ -47,7 +48,7 @@ Router.post('/save', function (req, res) {
       let _id = doc[0]._id
       blog.update({_id: _id}, {'$push': {list: newData}}, function (err, doc) {
         if (err) {
-          return res.json({code: 000,  msg: '后端出错' })
+          return res.json({code: 000,  msg: '后端出错2' })
         } else {
           return res.json({code: 200,  msg: '保存成功' })
         }

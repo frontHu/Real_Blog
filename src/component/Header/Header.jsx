@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { Icon } from 'antd';
 import $ from 'jquery'
 
-class Header extends Component { 
+class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -41,7 +41,7 @@ class Header extends Component {
 
   mouseOut() {
     let header = document.querySelector(".headerPage");
-    header.style.top = "-60px";
+    header.style.top = "-60px"; 
     header.style.opacity = "0";
   }
 
@@ -56,23 +56,19 @@ class Header extends Component {
   }
 
   navHandle() {
-    let navMask = document.querySelector(".nav-mask")
-    this.setState({
-      nav: !this.state.nav
-    }, () => {
-      if(this.state.nav) {
-        navMask.style.display = 'block'
-      }else {
-        navMask.style.display = 'none'
-      }
-    })
+    this.navShow = !this.navShow
+    if(this.navShow) {
+      $('.nav-mask').addClass('nav-mask-show')
+    }else {
+      $('.nav-mask').removeClass('nav-mask-show')
+    }
   }
 
   render() {
     return (
       <div className="header">
         <div className="header-nav">
-          {/* <div className="header-bar">
+          <div className="header-bar">
             <Icon onClick={this.navHandle.bind(this)} type="bars" theme="outlined" />
           </div>
           <div className="nav-mask">
@@ -86,7 +82,7 @@ class Header extends Component {
                 <Link to="hero">友情链接</Link>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="headerPage">
           <div className="headerPage-header grid-row">

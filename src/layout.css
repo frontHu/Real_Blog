@@ -1,6 +1,7 @@
 @media screen and (max-width: 1550px) {
   .grid-row {
     width: 1200px;
+    margin: 0 auto;
   }
   .headerPage {
     display: block;
@@ -42,6 +43,9 @@
   }
   .nav-mask {
     display: block !important;
+  }
+  .headerPage {
+    display: none;
   }
 }
 
