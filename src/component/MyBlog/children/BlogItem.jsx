@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import "./../scss/blogItem.scss";
-import { format } from './../../../untils/format'
-import {hashHistory} from "react-router"
-
+import { format } from './../../../untils/format';
+import {hashHistory} from "react-router";
 class BlogItem extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
-  }
 
   goArticle(id) {
     hashHistory.push(`/artical/${id}`)

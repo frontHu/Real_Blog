@@ -27,7 +27,7 @@ class Comment extends Component {
           </div>
         </div>
         <div className="commentPage-main">
-          <div className="commentPage-content">
+          <div className="commentPage-content grid-row">
             <div className="commentPage-content-l">
               <Message />
               <Message />

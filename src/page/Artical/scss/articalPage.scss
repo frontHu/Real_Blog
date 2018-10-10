@@ -1,9 +1,10 @@
 .articalPage {
   background-color: #dee3e7;
   .articalPage-main {
-    // padding: 70px 0;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
     .articalPage-content {
-      // max-width: 1200px;
       margin: 0 auto;
       background: #fff;
       .articalPage-content-banner {
@@ -28,7 +29,9 @@
         }
       }
       .articalPage-content-text {
-        padding: 5em 0em;
+        padding: 5em 8em;
+        font-size: 16px;
+        line-height: 1.8em;
       }
     }
   }

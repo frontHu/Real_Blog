@@ -4,8 +4,11 @@ body {
   height: 100%; */
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   box-sizing: border-box;
+  color: #333;
+  font-size: 14px;
+  font-family: PingFang SC,Helvetica neue,Helvetica,Tahoma,lantinghei sc,Microsoft Yahei,sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
