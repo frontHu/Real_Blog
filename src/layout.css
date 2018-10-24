@@ -3,6 +3,9 @@
     width: 1200px;
     margin: 0 auto;
   }
+  .grid-box {
+    width: 100%;
+  }
   .headerPage {
     display: block;
   }
@@ -15,6 +18,9 @@
   .grid-row {
     width: 900px;
     margin: 0 auto;
+  }
+  .grid-row {
+    width: 100%;
   }
   .headerPage {
     display: block;
@@ -29,6 +35,9 @@
     width: 600px;
     margin: 0 auto;
   }
+  .grid-row {
+    width: 100%;
+  }
   .headerPage {
     display: block;
   }
@@ -39,6 +48,9 @@
 
 @media screen and (max-width: 650px) {
   .grid-row {
+    width: 100%;
+  }
+  .grid-box {
     width: 100%;
   }
   .nav-mask {

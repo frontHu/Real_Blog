@@ -52,7 +52,7 @@ class Artical extends Component {
         <div className="articalPage-main">
           <div className="articalPage-content">
             <div className="articalPage-content-banner">
-              <div className="articalPage-content-banner_title grid-row">
+              <div className="articalPage-content-banner_title">
                 <h1>{this.state.title}</h1>
                 <h3>{this.state.desc}</h3>
               </div>

@@ -3,7 +3,7 @@ import "./scss/app.scss";
 import Header from "./../../component/Header/Header";
 import Footer from './../../component/Footer/Footer'
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <div className="app">
