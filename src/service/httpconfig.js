@@ -1,6 +1,9 @@
 
 import axios from "axios";
 
+console.log(process.env.NODE_ENV)
+let origin = window.location.origin 
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? origin : origin + '/api'
 //拦截请求
 axios.interceptors.request.use(function(config) {
   return config

@@ -2,6 +2,7 @@ import React , { Component } from "react";
 import "./scss/comment.scss";
 import Message from "./children/Message";
 import Github from "./children/Github";
+import Pagination from "./../../component/Pagination/Pagination";
 
 class Comment extends Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class Comment extends Component {
             <div className="commentPage-content-l">
               <Message />
               <Message />
+              <Message />
+              <Pagination></Pagination>
             </div>
             <div className="commentPage-content-r">
             <Github />
