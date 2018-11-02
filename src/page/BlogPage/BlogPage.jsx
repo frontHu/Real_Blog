@@ -5,6 +5,7 @@ import Loading from './../../component/Loading/Loading'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as blogActions from './../../redux/action/blog.action'
+import { LayoutWrapper } from './../../untils/LayoutWrapper'
 
 @connect(state => {
   return {
@@ -52,5 +53,4 @@ class BlogPage extends Component {
     )
   }
 }
-
-export default BlogPage;
+export default LayoutWrapper(window.location.pathname)(BlogPage);

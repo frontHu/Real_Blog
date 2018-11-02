@@ -1,6 +1,7 @@
 import React from 'react';
 import './scss/plane.scss';
 import Planeitem from './children/Planeitem';
+import { LayoutWrapper } from './../../untils/LayoutWrapper'
 
 class Plane extends React.Component {
   constructor(props) {
@@ -42,4 +43,4 @@ class Plane extends React.Component {
   }
 }
 
-export default Plane
+export default LayoutWrapper(window.location.pathname)(Plane)

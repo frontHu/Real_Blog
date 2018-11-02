@@ -3,6 +3,7 @@ import "./scss/comment.scss";
 import Message from "./children/Message";
 import Github from "./children/Github";
 import Pagination from "./../../component/Pagination/Pagination";
+import { LayoutWrapper } from './../../untils/LayoutWrapper'
 
 class Comment extends Component {
   constructor(props) {
@@ -45,4 +46,4 @@ class Comment extends Component {
   }
 }
 
-export default Comment;
+export default LayoutWrapper(window.location.pathname)(Comment);

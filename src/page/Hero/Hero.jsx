@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./scss/hero.scss";
 import HeroItem from "./children/HeroItem";
+import { LayoutWrapper } from './../../untils/LayoutWrapper'
 
 class Hero extends Component {
   // constructor(props) {
@@ -24,4 +25,4 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+export default LayoutWrapper(window.location.pathname)(Hero);

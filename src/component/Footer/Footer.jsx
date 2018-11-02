@@ -1,9 +1,7 @@
 import React from 'react'
 import './scss/footer.scss'
-import {
-  Icon
-} from 'antd'
-
+import { Icon } from 'antd'
+import { withRouter } from 'react-router-dom'
 class Footer extends React.Component {
   constructor(props) {
     super(props)
@@ -11,9 +9,10 @@ class Footer extends React.Component {
 
   render() {
     return (
+     
       <div className='footer'>
         <div className="grid-row">
-          <div style={{overflow: 'hidden'}}>
+          <div style={{overflow: 'hidden', paddingBottom: 10}}>
             <div className="footer-left">
               <h3>我的世界</h3>
               <p>这个网站是自己前端路上的一个缩影，将这个网站作为一个自己“终生维护”的项目。不断的去精雕细琢，不断的去完善。也可以当做一个技术的实验基地，将好玩的东西应用在上面。</p>

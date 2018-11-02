@@ -1,5 +1,6 @@
 .articalPage {
   background-color: #dee3e7;
+  padding-bottom: 20px;
   .articalPage-main {
     max-width: 1000px;
     margin: auto;
@@ -7,11 +8,26 @@
     .articalPage-content {
       margin: 0 auto;
       background: #fff;
+      position: relative;
       .articalPage-content-banner {
         width: 100%;
         height: 400px;
         background-color: burlywood;
         position: relative;
+        
+      .articalPage-content-banner-img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-position: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #deb887;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+      }
         .articalPage-content-banner_title {
           padding: 0 2em;
           position: absolute;

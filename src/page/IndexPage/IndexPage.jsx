@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./scss/indexPage.scss";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 class IndexPage extends Component {
   render() {
@@ -12,7 +12,7 @@ class IndexPage extends Component {
           <p>I came here to escape from reality, but I found something far more important than myself, and I made a lot of friends, and I found love.</p>
           <div className="indexPage_jump">
             <Link to="/about">关于此站</Link>
-            <Link to="blog">进入博客</Link> 
+            <Link to="/blog">进入博客</Link> 
           </div>
         </div>
       </div>

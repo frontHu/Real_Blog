@@ -9,13 +9,13 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   reducer,
-  compose( 
+  // compose( 
     applyMiddleware(
       thunk,
       sagaMiddleware
     ),
-    window.devToolsExtension ? window.devToolsExtension() : ()=>{}
-  )
+    // window.devToolsExtension ? window.devToolsExtension() : ()=>{}
+  // )
 )
 sagaMiddleware.run(rootSaga);
 

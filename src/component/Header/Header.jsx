@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./scss/header.scss";
-import { Link } from "react-router";
+import { Link, withRouter } from "react-router-dom";
 import { Icon } from 'antd';
 import $ from 'jquery'
-
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -71,15 +70,16 @@ class Header extends Component {
           <div className="header-bar">
             <Icon onClick={this.navHandle.bind(this)} type="bars" theme="outlined" />
           </div>
+          
           <div className="nav-mask">
             <div className="grid-row">
               <div className="nav-mask-list">
-                <Link to="/">首页</Link>
-                <Link to="blog">博客</Link>
-                <Link to="plane">造飞船</Link>
-                <Link to="about">关于我</Link>
-                <Link to="comment">留言</Link>
-                <Link to="hero">友情链接</Link>
+              <li><a href="/">首页</a><span></span></li>
+              <li><a href="/blog">博客</a><span></span></li>
+              <li><a href="/plane">造飞船</a><span></span></li>
+              <li><a href="/about">关于我</a><span></span></li>
+              <li><a href="/comment">留言</a><span></span></li>
+              <li><a href="/hero">友情链接</a><span></span></li>
               </div>
             </div>
           </div>
@@ -87,12 +87,12 @@ class Header extends Component {
         <div className="headerPage">
           <div className="headerPage-header grid-row">
             <ul className="headerPage-header_list">
-              <li><Link to="/">首页</Link><span></span></li>
-              <li><Link to="blog">博客</Link><span></span></li>
-              <li><Link to="plane">造飞船</Link><span></span></li>
-              <li><Link to="about">关于我</Link><span></span></li>
-              <li><Link to="comment">留言</Link><span></span></li>
-              <li><Link to="hero">友情链接</Link><span></span></li>
+              <li><a href="/">首页</a><span></span></li>
+              <li><a href="/blog">博客</a><span></span></li>
+              <li><a href="/plane">造飞船</a><span></span></li>
+              <li><a href="/about">关于我</a><span></span></li>
+              <li><a href="/comment">留言</a><span></span></li>
+              <li><a href="/hero">友情链接</a><span></span></li>
             </ul>
             <div className="headerPage-header-avatar">
               <img src={require("./images/zy.png")} alt="" />

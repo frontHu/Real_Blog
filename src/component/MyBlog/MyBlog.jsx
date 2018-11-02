@@ -146,16 +146,14 @@ class MyBlog extends Component {
   render() {
     let list = this.state.list || [];
     return (
-      <div className="myBlog grid-row" >
-        <div className="myBlog-main" id="container" style={{ minHeight: 400 }}>
-        
-            {list.length > 0 && list.map((v, i) => {
-              return (
-                <BlogItem {...v} key={i} i={i} /> 
-              )
-              
-            })}
-         
+      <div className="myBlog grid-row">
+        <div className="myBlog-main grid-row" id="container" style={{ minHeight: 400 }}>
+          {list.length > 0 && list.map((v, i) => {
+            return (
+              <BlogItem {...v} key={i} i={i} /> 
+            )
+            
+          })}
         </div>
         { this.state.show ? <Loading/> : null }
       </div>

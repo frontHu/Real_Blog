@@ -1,3 +1,18 @@
+@media screen and (min-width: 1550px) {
+  .grid-row {
+    width: 1550px;
+    margin: 0 auto;
+  }
+  .grid-box {
+    width: 100%;
+  }
+  .headerPage {
+    display: block;
+  }
+  .nav-mask {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 1550px) {
   .grid-row {
     width: 1200px;
@@ -19,9 +34,6 @@
     width: 900px;
     margin: 0 auto;
   }
-  .grid-row {
-    width: 100%;
-  }
   .headerPage {
     display: block;
   }
@@ -35,9 +47,6 @@
     width: 600px;
     margin: 0 auto;
   }
-  .grid-row {
-    width: 100%;
-  }
   .headerPage {
     display: block;
   }
@@ -46,7 +55,7 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
   .grid-row {
     width: 100%;
   }

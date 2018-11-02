@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./../scss/blogItem.scss";
 import { format } from './../../../untils/format';
-import {hashHistory} from "react-router";
+import { withRouter } from 'react-router-dom';
+
+@withRouter
 class BlogItem extends Component {
 
-  goArticle(id) {
-    hashHistory.push(`/artical/${id}`)
+  goArticle(id, i) {
+    this.props.history.push(`/artical/${id}/${i}`)
   }
 
   render() {
@@ -13,7 +15,7 @@ class BlogItem extends Component {
       <div style={{
         left: this.props.left || 0,
         top: this.props.top || 0
-      }} className="blogItemPage grid-box" onClick={this.goArticle.bind(this, this.props._id)}>
+      }} className="blogItemPage grid-box" onClick={this.goArticle.bind(this, this.props._id, this.props.i+1)}>
         <div className="blogItemPage-main">
           <div className="blogItemPage_img_box">
             <img  className="blogItemPage_img" src={this.props.imgUrl || require(`./../../../assets/${this.props.i+1}.jpg`)} alt="" /> 
