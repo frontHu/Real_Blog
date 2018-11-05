@@ -31,12 +31,12 @@ class BlogPage extends Component {
           <div className="blogPage-main-content">
             <div className="blogPage-banner">
               <div className="blogPage-banner-text grid-row">
-                <section className="blogPage-banner_big">Hey There.</section>
-                <section className="blogPage-banner_small">based in Hefei, Anhu.</section>
-                <section className="blogPage-banner_big">Just Another FE Engineer.</section>
-                <section className="blogPage-banner_small">Now, Working at Iflytek.</section>
-                <section className="blogPage-banner_big">Want to be a FE architect.</section>
-                <section className="blogPage-banner_small">Always troubled by reality. <span>😝😝😝</span></section>
+                <section className="blogPage-banner_big">Hey There</section>
+                <section className="blogPage-banner_small">based in Hefei, Anhu😝</section>
+                <section className="blogPage-banner_big">Just Another FE Engineer</section>
+                <section className="blogPage-banner_small">Now, Working at Iflytek😝</section>
+                <section className="blogPage-banner_big">Want to be a FE architect</section>
+                <section className="blogPage-banner_small">Always troubled by reality<span>😝</span></section>
               </div>
             </div>
             <div className="blogPage-content">

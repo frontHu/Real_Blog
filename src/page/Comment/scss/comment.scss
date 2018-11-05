@@ -1,24 +1,17 @@
 .commentPage {
   width: 100%;
-  min-width: 1200px;
   background-color: #f4f4f4;
   .commentPage-banner {
     width: 100%;
-    // min-width: 1200px;
     height: 500px;
-    background: red;
     background-size: contain;
     position: relative;
     background: url("./../images/banner.jpg") no-repeat center center;
     background-size: cover;
     .commentPage-chat {
-      position: absolute;
-      top: 20%;
-      left: 0;
-      right: 0;
       margin: 0 auto;
+      padding-top: 100px;
       .commentPage-chat-box {
-        width: 700px;
         padding: 20px 20px 20px 20px;
         background: #fff;
         position: relative;
@@ -27,7 +20,6 @@
         .commentPage-chat-avatar {
           width: 40px;
           height: 40px;
-          // background-color: #ccc;
           float: left;
           img {
             width: 100%;
@@ -81,25 +73,26 @@
     }
   }
   .commentPage-main {
-    width: 100%;
-    // min-width: 1200px;
+    // width: 100%;;
     background-color: #f4f4f4;
     margin-top: 20px;
     .commentPage-content {
-      // width: 1200px;
       background-color: #fff;
       overflow: hidden;
       margin: 0 auto;
       padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       .commentPage-content-l {
-        width: 800px;
+        // width: 800px;
         float: left;
         padding-top: 20px;
       }
       .commentPage-content-r {
-        float: right;
+        float: left;
         padding-top: 20px;
-        padding-right: 20px;
+        // padding-right: 20px;
       } 
     }
   }

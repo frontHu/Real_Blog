@@ -14,7 +14,8 @@ class Comment extends Component {
     return (
       <div className="commentPage moveIn">
         <div className="commentPage-banner">
-          <div className="commentPage-chat">
+
+          <div className="commentPage-chat grid-row">
             <div className="commentPage-chat-box">
               <div className="commentPage-chat-avatar">
                 <img src={require('./images/avatar.png')} alt=""/>
@@ -28,8 +29,8 @@ class Comment extends Component {
             </div>
           </div>
         </div>
-        <div className="commentPage-main">
-          <div className="commentPage-content grid-row">
+        <div className="commentPage-main grid-row">
+          <div className="commentPage-content">
             <div className="commentPage-content-l">
               <Message />
               <Message />

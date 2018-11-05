@@ -39,13 +39,15 @@
       }
 
       .aboutPage-main-header_content {
-        position: absolute;
-        width: 500px;
+        // position: absolute;
+        // width: 500px;
         height: 120px;
-        top: 50%;
-        left: 50%;
-        margin-left: -250px;
-        margin-top: -60px;
+        // top: 50%;
+        // left: 50%;
+        // margin-left: -250px;
+        // margin-top: -60px;
+        padding-top: 100px;
+        margin: 0 auto;
         text-align: center;
 
         .aboutPage-main-header_content_avatar {

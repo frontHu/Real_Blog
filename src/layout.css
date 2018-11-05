@@ -12,6 +12,12 @@
   .nav-mask {
     display: none !important;
   }
+  .messagePage {
+    width: 800px;
+  }
+  .github {
+    width: 360px;
+  }
 }
 @media screen and (max-width: 1550px) {
   .grid-row {
@@ -27,6 +33,12 @@
   .nav-mask {
     display: none !important;
   }
+  .messagePage {
+    width: 800px;
+  }
+  .github {
+    width: 360px;
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -40,6 +52,15 @@
   .nav-mask {
     display: none !important;
   }
+  .messagePage {
+    width: 100%;
+  }
+  .github {
+    width: 100%;
+  }
+  .commentPage-content-l,.commentPage-content-r {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -52,6 +73,15 @@
   }
   .nav-mask {
     display: none !important;
+  }
+  .messagePage {
+    width: 100%;
+  }
+  .github {
+    width: 100%;
+  }
+  .commentPage-content-l,.commentPage-content-r {
+    width: 100%;
   }
 }
 
@@ -67,6 +97,15 @@
   }
   .headerPage {
     display: none;
+  }
+  .messagePage {
+    width: 100%;
+  }
+  .github {
+    width: 100%;
+  }
+  .commentPage-content-l,.commentPage-content-r {
+    width: 100%;
   }
 }
 

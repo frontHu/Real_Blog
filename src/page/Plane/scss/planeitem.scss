@@ -10,6 +10,7 @@
     box-shadow: 1px 1px 2px rgba(0,0,0,.2);
     overflow: hidden;
     text-decoration: none;
+    cursor: pointer;
     .plane-item-box-data {
       width: 100%;
       height: 36px;
@@ -35,7 +36,7 @@
       }
     }
     .plane-item-box-cover {
-      // background: #333 url('./../images/npm.png') no-repeat center center;
+      height: 330px;
       transition: all .2s ease-in-out;
       transition-delay: .1s;
       &::after {

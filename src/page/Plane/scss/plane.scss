@@ -11,7 +11,7 @@
     background-color: #fff;
     .plane-desc-box {
       position: relative;
-      height: 50px;
+      min-height: 50px;
       line-height: 50px;
       .plane-desc-github {
         width: 140px;
@@ -28,7 +28,11 @@
         }
       }
       .plane-desc-box-desc {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 16px;
         padding-left: 160px;
+        line-height: 20px;
         font-size: 14px;
         color: #333;
         margin: 0;
@@ -36,6 +40,7 @@
     }
   }
   .plane-main {
+    background-color: #dee3e7;
     .plane-main-cotent {
       padding-top: 50px;
       overflow: hidden;
