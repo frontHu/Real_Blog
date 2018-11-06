@@ -38,7 +38,6 @@ Router.post('/save', function (req, res) {
       let blogModel = new blog({currentPage: 1, list: newData});
       blogModel.save(function (err, doc) {
         if (err) {
-          console.log(err, 'errrrrrrrrrrrrrrrrrrrrr1')
           return res.json({ code: 000, msg: '后端出错1' });
         } else {
           return res.json({ code: 200, msg: '保存成功' });

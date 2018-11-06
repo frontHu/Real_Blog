@@ -3,7 +3,8 @@ import "./scss/comment.scss";
 import Message from "./children/Message";
 import Github from "./children/Github";
 import Pagination from "./../../component/Pagination/Pagination";
-import { LayoutWrapper } from './../../untils/LayoutWrapper'
+import { LayoutWrapper } from './../../untils/LayoutWrapper';
+import ModalBox from './../../component/Modal'
 
 class Comment extends Component {
   constructor(props) {
@@ -14,8 +15,7 @@ class Comment extends Component {
     return (
       <div className="commentPage moveIn">
         <div className="commentPage-banner">
-
-          <div className="commentPage-chat grid-row">
+          <div className="commentPage-chat grid-row"> 
             <div className="commentPage-chat-box">
               <div className="commentPage-chat-avatar">
                 <img src={require('./images/avatar.png')} alt=""/>
