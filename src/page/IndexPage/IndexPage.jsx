@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./scss/indexPage.scss";
 import { Link } from "react-router-dom";
-import Modal from './../../component/Modal/Modal'
+import ModalBox from './../../component/Modal/index'
 
 class IndexPage extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class IndexPage extends Component {
             <Link to="/blog">进入博客</Link> 
           </div>
         </div>
-        <Modal></Modal>
+        <ModalBox></ModalBox>
       </div>
     )
   }
