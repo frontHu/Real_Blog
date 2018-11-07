@@ -29,6 +29,9 @@ let model = {
     comment: {
       type: String,
       require: true,
+    },
+    time: {
+      type: String
     }
   })]
 }
