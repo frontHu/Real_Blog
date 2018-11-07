@@ -7,8 +7,9 @@ class ModalBox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOpen: props.isOpen || true
+      isOpen: props.isOpen || false
     }
+    this.node = null
   }
 
   componentDidMount() {
@@ -19,12 +20,21 @@ class ModalBox extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if("isOpen" in nextProps) {
-      this.setState({isOpen: nextProps.isOpen}, () => {
+      this.setState({
+        isOpen: nextProps.isOpen
+      }, () => {
         if(this.state.isOpen) {
           this.renderPortal(nextProps)
+        }else {
+          this.onClose()
         }
       })
     }
+    
+  }
+
+  componentDidUpdate(nextProps) {
+
   }
 
   componentWillUnmount() {
@@ -32,18 +42,24 @@ class ModalBox extends React.Component {
   }
 
   renderPortal(props) {
-    const doc = window.document;
-    this.node = doc.createElement('div');
-    doc.body.appendChild(this.node);
-    ReactDOM.render(
-      <Modal {...props} onClose={this.onClose.bind(this)} />, 
-      this.node
+    if(!this.node) {
+      this.node = window.document.createElement('div');
+      window.document.body.appendChild(this.node);
+    }
+    
+    ReactDOM.unstable_renderSubtreeIntoContainer(
+      this,
+      <Modal {...props} onClose={this.onClose.bind(this)}>{props.children}</Modal>,  
+      this.node 
     );
   }
 
   onClose() {
-    ReactDOM.unmountComponentAtNode(this.node);
-    window.document.body.removeChild(this.node);
+    if(this.node) {
+      ReactDOM.unmountComponentAtNode(this.node);
+      window.document.body.removeChild(this.node);
+      this.node = null
+    }
   }
 
   render() {

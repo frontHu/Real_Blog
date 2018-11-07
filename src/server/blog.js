@@ -11,14 +11,12 @@ Router.post('/list', function (req, res) {
     if (err) {
       return res.json({ code: 000, msg: '后端出错' })
     } else {
-      setTimeout(function () {
-        let data = {
-          currentPage: currentPage,
-          list: doc[0] ? doc[0].list.slice((currentPage-1)*10, currentPage*10) : [],
-          totalCount: doc[0] ? doc[0].list.length : 0
-        }
-        return res.json({code: 200, content: data})
-      }, 1000)
+      let data = {
+        currentPage: currentPage,
+        list: doc[0] ? doc[0].list.slice((currentPage-1)*10, currentPage*10) : [],
+        totalCount: doc[0] ? doc[0].list.length : 0
+      }
+      return res.json({code: 200, content: data})
     }
   })
 })

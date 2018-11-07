@@ -12,14 +12,12 @@ class Modal extends Component {
   onOkClick(e) {
     e.stopPropagation()
     this.props.onOk && this.props.onOk()
-    this.props.onClose()
   }
 
   //点击取消回调函数
   onCancelClick(e) {
     e.stopPropagation()
     this.props.onCancel && this.props.onCancel()
-    this.props.onClose()
   }
 
   render() {
@@ -32,10 +30,11 @@ class Modal extends Component {
       maskClosable,
       type
     } = this.props;
-
+    
     return (
-      <div className={`modal-container ${ className }`} onClick={maskClosable ? this.props.onClose : ()=>{}}>
+      <div className={`modal-container ${ className }`}>
         <div className="modal-body">
+          <div className="modal-close" onClick={this.props.onClose}>×</div>
           <div className={`modal-title ${ type }`}>{title}</div>
           <div className="modal-content">{ children }</div>
           <div className="modal-footer"> 

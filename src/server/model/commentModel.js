@@ -14,16 +14,21 @@ let model = {
     require: true
   },
   commentList: [new mongoose.Schema({
-    role: {
+    name: {
       type: String,
       reuqire: true
+    },
+    email: {
+      type: String,
+      require: true
+    },
+    website: {
+      type: String,
+      require: true
     },
     comment: {
       type: String,
       require: true,
-    },
-    icon: {
-      type: String
     }
   })]
 }

@@ -9,7 +9,6 @@ function* blogSaga(data) {
   let res = yield call(APIS.getBlogList, params)
   if(res.data.code === 200) {
     cb && cb();
-    // yield put({type: Types.BLOG_LIST, payload: res.data.content})
   }
 }
 
