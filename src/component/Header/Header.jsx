@@ -90,12 +90,12 @@ class Header extends Component {
               <li><a href="/">首页</a><span></span></li>
               <li><a href="/blog">博客</a><span></span></li>
               <li><a href="/plane">造飞船</a><span></span></li>
-              <li><a href="/about">关于我</a><span></span></li>
               <li><a href="/comment">留言</a><span></span></li>
               <li><a href="/hero">友情链接</a><span></span></li>
+              <li><a href="/about">关于我</a><span></span></li>
             </ul>
             <div className="headerPage-header-avatar">
-              <img src={require("./images/zy.png")} alt="" />
+              <img src={require("./../../assets/zy.png")} alt="" />
             </div>
           </div>
         </div>

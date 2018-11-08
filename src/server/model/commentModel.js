@@ -32,6 +32,9 @@ let model = {
     },
     time: {
       type: String
+    },
+    replyForId: {
+      type: String
     }
   })]
 }

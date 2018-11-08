@@ -20,11 +20,11 @@ class Footer extends React.Component {
             <div className="footer-mid">
               <h3>相关</h3>
               <ul>
-                <li><a href=""><Icon type="edit" /> 博客</a></li>
-                <li><a href=""><Icon type="like-o" /> 造飞船</a></li>
-                <li><a href=""><Icon type="heart-o" /> 关于我</a></li>
-                <li><a href=""><Icon type="link" /> 友链</a></li>
-                <li><a href=""><Icon type="message" /> 留言</a></li>
+                <li><a href="/blog"><Icon type="edit" /> 博客</a></li>
+                <li><a href="/plane"><Icon type="like-o" /> 造飞船</a></li>
+                <li><a href="/about"><Icon type="heart-o" /> 关于我</a></li>
+                <li><a href="/hero"><Icon type="link" /> 友链</a></li>
+                <li><a href="/comment"><Icon type="message" /> 留言</a></li>
               </ul>
             </div>
             <div className="footer-right">

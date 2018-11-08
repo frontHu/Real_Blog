@@ -6,12 +6,25 @@
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/average.ico">
-    <title>PUBG</title>
+    <title>未来已来</title>
   </head>
-  <body>
+  <body> 
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
   </body>
+  <script>
+    document.addEventListener('visibilitychange', function () {
+      if(document.visibilityState === 'hidden') {
+        document.title = '(*￣︶￣)土遁·隐身术~'
+      }else {
+        document.title = 'come back~٩(๑>◡<๑)۶'
+        setTimeout(function() {
+          document.title = ''
+        },1000)
+        
+      }
+    })
+  </script>
 </html>

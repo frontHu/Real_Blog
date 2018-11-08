@@ -12,7 +12,7 @@ class AboutMe extends Component {
             <div className="aboutPage-main-header_content grid-row">
               
               <div className="aboutPage-main-header_content_avatar">
-                <img src={require("./images/zy.png")} alt="" />
+                <img src={require("./../../assets/zy.png")} alt="" />
               </div>
               <p className="aboutPage-main-header_content_desc">韶华易逝，红颜易老。</p>
               <p className="aboutPage-main-header_content_desc">Want to open a coffee shop.</p>

@@ -36,6 +36,12 @@ class Plane extends React.Component {
               linl='https://segmentfault.com/u/fsrookie'
               img={require('./images/segmentfault.jpg')}
             />
+            <Planeitem 
+              title='一个简单的Modal组件'
+              desc='基于React的一个粗糙的弹窗组件。'
+              link='https://www.npmjs.com/package/simple-modal-react'
+              img={require('./images/mouse.png')}
+            />
           </div>
         </div>
       </div>

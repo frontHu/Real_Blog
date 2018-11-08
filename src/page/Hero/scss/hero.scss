@@ -7,7 +7,6 @@
     background: #64cccb;
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#336799),color-stop(1,#64cccb));
     .heroPage-title {
-      // width: 1200px;
       margin: 0 auto;
       text-align: center;
       padding-top: 3em;
@@ -28,9 +27,22 @@
     }
   }
   .heroPage-main {
-    // width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     padding-top: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .heroPage-main {
+    width: auto;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .heroPage-main {
+    width: 800px;
   }
 }

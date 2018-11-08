@@ -16,8 +16,11 @@
       background-color: blue;
       float: left;
       margin-right: 10px;
-      background: url("./../images/QQ.png") no-repeat center center;
       background-size: cover;
+      img {
+        width: 40px;
+        height: 40px;
+      }
     }
     .messagePage-user-info {
       .messagePage-user-info-name {
@@ -33,17 +36,20 @@
     }
   }
   .messagePage-text {
-    max-height: 228px;
+    // max-height: 228px;
     overflow: auto;
     padding: 5px 0;
     line-height: 1.6em;
     color: #666;
     font-size: 14px;
+    word-break: break-all;
   }
   .messagePage-action {
     overflow: hidden;
     .messagePage-action-replay {
       float: right;
+      color: #666;
+      cursor: pointer;
     }
   }
 }

@@ -2,27 +2,29 @@ import React , { Component } from "react";
 import "./scss/comment.scss";
 import Message from "./children/Message";
 import Github from "./children/Github";
-import Pagination from "./../../component/Pagination/Pagination";
+import Pagination from "./../../common/Pagination/Pagination";
 import { LayoutWrapper } from './../../untils/LayoutWrapper';
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as commentActions from './../../redux/action/comment.action'
-import Modalbox from 'simple-modal-react'
-import { Input, message } from 'antd'
+import Modalbox from './../../common/Modal'
+import { Input, message } from 'antd';
+import Spin from './../../common/Spin/Spin'
 
 @connect()
 class Comment extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOpen: false,
+      isOpen: false, 
       name: '',
       email: '',
       website: '',
       currentPage: 1,
       pageSize: 5,
       totalCount: 0,
-      list: []
+      list: [],
+      loading: false
     }
     this.actions = bindActionCreators(Object.assign({}, commentActions), props.dispatch)
   }
@@ -36,11 +38,13 @@ class Comment extends Component {
       currentPage: this.state.currentPage,
       pageSize: this.state.pageSize
     }
+    this.setLoaing(true)
     this.actions.getCommentList(params).then(res => {
       this.setState({
         totalCount: res.content.totalCount,
         list: res.content.list
       })
+      this.setLoaing(false)
     })
   }
 
@@ -59,15 +63,11 @@ class Comment extends Component {
       }
       window.localStorage.setItem('userinfo', JSON.stringify(obj))
     }
-    this.setState({
-      isOpen: false
-    })
+    this.openLogin(false)
   }
 
   onCancel() {
-    this.setState({
-      isOpen: false
-    })
+    this.openLogin(false)
   }
 
   submit() {
@@ -81,17 +81,18 @@ class Comment extends Component {
         name: userinfo.name,
         email: userinfo.email,
         website: userinfo.website,
-        comment: this.state.comment
+        comment: this.state.comment,
+        replyForId: ''
       }
+      this.setLoaing(true)
       this.actions.subComment(obj).then(res => {
         this.setState({comment: ''})
+        this.setLoaing(false)
         message.success('兄嘚，可以的')
         this.getList()
       })
     }else {
-      this.setState({
-        isOpen: true
-      })
+      this.openLogin(true)
     }
   }
 
@@ -104,9 +105,18 @@ class Comment extends Component {
     })
   }
 
+  openLogin(bool) {
+    this.setState({ isOpen: bool })
+  }
+
+  setLoaing(bool) {
+    this.setState({loading: bool})
+  }
+
   render() {
     return (
       <div className="commentPage moveIn">
+        <Spin visible={this.state.loading} />
         <Modalbox
           title="留下大名" 
           isOpen={this.state.isOpen}
@@ -142,7 +152,7 @@ class Comment extends Component {
                 <textarea 
                   value={this.state.comment} 
                   onChange={(e)=>{this.inputInfo('comment', e.target.value)}}
-                  placeholder='留言功能正在进行中...回复功能暂未添加'
+                  placeholder='有啥BUG和意见多多发表呀，谢谢各位大佬！'
                 ></textarea>
               </div>
               <div className="commentPage-chat-sub">
@@ -155,7 +165,17 @@ class Comment extends Component {
           <div className="commentPage-content">
             <div className="commentPage-content-l">
               {this.state.list.length > 0 ?this.state.list.map((v, i) => {
-                return <Message data={v} key={i}></Message>
+                return (
+                  <Message 
+                    openLogin={this.openLogin.bind(this)} 
+                    data={v} 
+                    key={i}
+                    index={i+1}
+                    subComment={this.actions.subComment}
+                    getList={this.getList.bind(this)}
+                    setLoaing={this.setLoaing.bind(this)}
+                  ></Message>
+                )
               }) : 
               <h1 style={{textAlign: 'center',color:'#666'}}>
                 第一张沙发谁来坐？？？

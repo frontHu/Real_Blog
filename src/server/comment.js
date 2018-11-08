@@ -12,7 +12,7 @@ Router.post('/list', function(req, res) {
       let data = {
         currentPage: currentPage,
         pageSize: pageSize,
-        list: doc[0] ? doc[0].commentList.slice((currentPage-1)*5, currentPage*5) : [],
+        list: doc[0] ? doc[0].commentList.reverse().slice((currentPage-1)*5, currentPage*5) : [],
         totalCount: doc[0] ? doc[0].commentList.length : 0
       }
       return res.json({code: 200, content: data})
@@ -21,10 +21,10 @@ Router.post('/list', function(req, res) {
 })
 
 Router.post('/sub', function(req, res) {
-  let { name, email, website, comment } = req.body
+  let { name, email, website, comment, replyForId } = req.body
   commentModel.find(function(err, doc) {
     let newData = {
-      name, email, website, comment, time: (new Date()).getTime()
+      name, email, website, comment, replyForId, time: (new Date()).getTime()
     }
     if(!doc || doc.length <= 0) {
       let comment = new commentModel({
@@ -43,7 +43,7 @@ Router.post('/sub', function(req, res) {
     }else {
       let _id = doc[0]._id
       let newData = {
-        name, email, website, comment, time: (new Date()).getTime()
+        name, email, website, comment, replyForId, time: (new Date()).getTime()
       }
       commentModel.update({_id: _id}, {'$push': {commentList: newData}}, function (err, doc) {
         if (err) {
