@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./scss/header.scss";
-import { Link, withRouter } from "react-router-dom";
 import { Icon } from 'antd';
 import $ from 'jquery'
 class Header extends Component {
