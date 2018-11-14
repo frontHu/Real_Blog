@@ -37,6 +37,6 @@ let model = {
 }
 
 module.exports = {
-  model: mongoose.model('comment', new mongoose.Schema(model))
+  model: mongoose.model('friend', new mongoose.Schema(model))
 }
 

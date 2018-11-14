@@ -7,11 +7,13 @@ const server = require('http').Server(app)
 const DB_URL = "mongodb://localhost:27017/test"
 const blogRouter = require('./blog') 
 const commentRouter = require('./comment')
+const friendRouter = require('./friend') 
 
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use('/blog', blogRouter)
 app.use('/comment', commentRouter)
+app.use('/friend', friendRouter)
 
 mongoose.connect(DB_URL)
 mongoose.connection.on('connected', function() {
