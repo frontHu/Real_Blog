@@ -36,22 +36,22 @@ class AboutMe extends Component {
               <div className="aboutPage-main-content-me_desc">
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp;毕业至今已有3年。<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;网易安徽-阴差阳错的接触到html,css,jquey这一神奇的领域。<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;鬼知道经历了什么...<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;时光流影-遇到一群好同事，带我走入前端神奇的大门。<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;科大讯飞-想进入传说中加班很猛的公司去体验一下。<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;持续的学习才是前端的魅力所在吧。<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;2015-阴差阳错的接触到前端...<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;2016-鬼知道经历了什么...<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;2017-时光流影-遇到一些好同事...<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;2018-讯飞-搬砖搬砖搬砖...<br />
+                  {/* &nbsp;&nbsp;&nbsp;&nbsp;持续的学习才是前端的魅力所在吧。<br /> */}
                   {/* &nbsp;&nbsp;&nbsp;&nbsp;也许是因为觉得前端是一个让人觉得年轻，有活力，有创新，能够让你不断前进，可以特立独行的一个"职业"吧。<br/> */}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
-              </div>
+              </div> 
               <div className="aboutPage-main-content-me_title">Dream Follow</div>
               <div className="aboutPage-main-content-me_desc">
                 <p>
-                  &nbsp;&nbsp;&nbsp;&nbsp;每个人有自己的梦想，有自己想要完成事情。<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;经历过可以随意挥霍的青春，让我们继续奋斗吧！ <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Better Life.<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;(文笔不好，回去多看看书.....)
+                  &nbsp;&nbsp;&nbsp;&nbsp;不断学习，不断探索。<br />
+                  {/* &nbsp;&nbsp;&nbsp;&nbsp; <br /> */}
+                  {/* &nbsp;&nbsp;&nbsp;&nbsp;Better Life.<br /> */}
+                  {/* &nbsp;&nbsp;&nbsp;&nbsp;(文笔不好，回去多看看书.....) */}
                 </p>
               </div>
             </div>

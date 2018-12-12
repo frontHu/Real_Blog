@@ -3,7 +3,13 @@ const mongoose = require("mongoose")
 let model = {
   currentPage: {
     type: Number,
-    require: true
+    require: true,
+    default: 1
+  },
+  pageSize:{
+    type: Number, 
+    require: true,
+    default: 10
   },
   totalCount: {
     type: Number,

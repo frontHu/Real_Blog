@@ -63,7 +63,6 @@ Router.get('/detail', function(req, res) {
       let list = doc[0].list
       let v = {}
       for(let i=0; i<list.length; i++) {
-        console.log(list[i]._id == blogId)
         if(list[i]._id == blogId) {
           v = list[i]
           break;
@@ -74,4 +73,48 @@ Router.get('/detail', function(req, res) {
   })
 })
 
-module.exports = Router
+Router.post('/all', function(req, res) {
+  let params = req.body
+  blog.find((function(err, doc) {
+    let list = doc && doc[0]
+    let obj = {}
+    if(list.list.length > 0) {
+      obj.currentPage = params.currentPage
+      obj.pageSize = params.pageSize
+      obj.content = list.list.slice((obj.currentPage-1)*obj.pageSize, (obj.currentPage-1)*obj.pageSize+obj.pageSize)
+      res.send({
+        code: '000', 
+        list: {
+          // content: obj.content, 
+          content: list.list,
+          currentPage: obj.currentPage, 
+          pageSize: obj.pageSize
+        }
+      })
+    }else {
+      res.send({code: 200, list: {content: [], currentPage: 1, pageSize: 10}})
+    }
+  }))
+})
+
+Router.post('/delete', function(req, res) {
+  let id = req.body._id
+  blog.find(function(err, doc) {
+    let list = doc && doc[0].list
+    list.forEach((v, i) => {
+      if(v._id == id) {
+        list.splice(i,1)
+      }
+    })
+    let _id = doc[0]._id
+    blog.update({_id: _id}, {list}, function (err, doc) {
+      if (err) {
+        return res.json({code: 000,  msg: '删除失败' })
+      } else {
+        return res.json({code: 200,  msg: '删除成功' })
+      }
+    })
+  })
+})
+
+module.exports = Router 
