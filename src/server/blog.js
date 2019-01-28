@@ -3,6 +3,7 @@ const Router = express.Router();
 const blog = require("./model/blogModel").model;
 
 Router.post('/list', function (req, res) {
+  console.log(req, 'req')
   let { currentPage } = req.body
   if (!currentPage) {
     return res.json({ code: 000, msg: '参数缺失' })

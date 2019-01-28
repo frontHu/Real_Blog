@@ -19,5 +19,6 @@ mongoose.connect(DB_URL)
 mongoose.connection.on('connected', function() {
   console.log('##### mongo connect successed #####') 
 })
-
-app.listen(8080); 
+app.listen(8080, function(params) {
+  console.log('server start')
+}); 
